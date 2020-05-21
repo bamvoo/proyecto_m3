@@ -55,15 +55,22 @@
         </aside>
 
         <section id="central">
-            <h3>Bienvenido al Calabozo</h3>
             <article>
+                <div>
+                    <h3>Bienvenido al Calabozo</h3>
+                </div>
+                <div>
+                    <input type="button" name="btn1" value="Adentrarse al calabozo">
+                    <input type="button" name="btn2" value="Hall de la fama">
+                </div>
                 <?php
-                $username = filter_input(INPUT_COOKIE, 'username');
-                $level = filter_input(INPUT_COOKIE, 'userlevel');
-                $points = filter_input(INPUT_COOKIE, 'userpoints');
-                print "<h3>Usuari: $username </h3>";
-                print "Nivell: $level";
-                print "<br><br>Punts: ".(int)$points."<br><br>";
+
+//                    $username = filter_input(INPUT_COOKIE, 'username');
+//                    $level = filter_input(INPUT_COOKIE, 'userlevel');
+//                    $points = filter_input(INPUT_COOKIE, 'userpoints');
+//                    print "<h3>Usuari: $username </h3>";
+//                    print "Nivell: $level";
+//                    print "<br><br>Punts: ".(int)$points."<br><br>";
                 ?>
             </article>
         </section>
