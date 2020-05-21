@@ -8,53 +8,50 @@
     </head>
 
     <body>
-        <header  class="title">
-            <h1>  </h1>
-            <section id="menu">
-                <nav  class="darkstyle">
-                    <div>
-                        <a href="UserAccountView.php" class="optmenu">COMPTE USUARI</a>
-                        <a href="MathChallengeView.php" class="optmenu">MATEMÀTIQUES</a>
-                        <a href="BlankPage.php" class="optmenu">PUZZLES</a>
-                        <?php
-                            include '../adapterspackage/MySQLAdapter.php';
-                            include '../controllerspackage/LevelController.php';
-
-                            $data=[];
-                            $data2=[];
-                            $db = DBConnectionFactory::getConnection();
-
-                            $level = filter_input(INPUT_COOKIE, 'userlevel');
-
-                            lvlFibo($data);
-                            lvlPrimo($data2);
-
-                            if ((int)$level >= $data[0]['nivell']) {
-                                echo '<a href="Tests_Fibo_View.php" class="optmenu">TEST NUM FIBOS</a>';
-                            }
-                            if ((int)$level >= $data2[0]['nivell']) {
-                                echo '<a href="Tests_Primo_View.php" class="optmenu">TEST NUM PRIMOS</a>';
-                            }
-
-                        ?>
-                        <a href="BlankPage.php" class="optmenu">JOCS</a>
-                        <a href="Clasifications.php" class="optmenu">CLASSIFICACIONS</a>
-
-                    </div>
-                </nav>
-            </section>
+        <header>
+<!--            <section id="menu">-->
+<!--                <nav  class="darkstyle">-->
+<!--                    <div>-->
+<!--                        <a href="UserAccountView.php" class="optmenu">COMPTE USUARI</a>-->
+<!--                        <a href="MathChallengeView.php" class="optmenu">MATEMÀTIQUES</a>-->
+<!--                        <a href="BlankPage.php" class="optmenu">PUZZLES</a>-->
+<!--                        -->
+            <?php
+//                            include '../adapterspackage/MySQLAdapter.php';
+//                            include '../controllerspackage/LevelController.php';
+//
+//                            $data=[];
+//                            $data2=[];
+//                            $db = DBConnectionFactory::getConnection();
+//
+//                            $level = filter_input(INPUT_COOKIE, 'userlevel');
+//
+//                            lvlFibo($data);
+//                            lvlPrimo($data2);
+//
+//                            if ((int)$level >= $data[0]['nivell']) {
+//                                echo '<a href="Tests_Fibo_View.php" class="optmenu">TEST NUM FIBOS</a>';
+//                            }
+//                            if ((int)$level >= $data2[0]['nivell']) {
+//                                echo '<a href="Tests_Primo_View.php" class="optmenu">TEST NUM PRIMOS</a>';
+//                            }
+//
+//
+            ?>
+<!--                        <a href="BlankPage.php" class="optmenu">JOCS</a>-->
+<!--                        <a href="Clasifications.php" class="optmenu">CLASSIFICACIONS</a>-->
+<!---->
+<!--                    </div>-->
+<!--                </nav>-->
+<!--            </section>-->
         </header>
 
         <aside id="leftside">
-            <div class="darkstyle">
 
-            </div>
         </aside>
 
         <aside id="rightside">
-            <div class="darkstyle">
 
-            </div>
         </aside>
 
         <section id="central">
@@ -72,7 +69,6 @@
         </section>
 
         <footer>
-            <div></div>
         </footer>
     </body>
 </html>
