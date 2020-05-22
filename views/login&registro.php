@@ -12,8 +12,31 @@
             $(document).ready(function(){
                 // $("#p1") .show(); .hide();
                 $("#p1 .next_btn").click(function(){
-
+                    $("#p1").hide();
+                    $("#p2").show();
                 });
+                $(".si_btn").click(function(){
+                    $("#p2").hide();
+                    $("#p3l").show();
+                });
+                $(".no_btn").click(function(){
+                    $("#p2").hide();
+                    $("#p3r").show();
+                });
+                //hacer que solo se active al tener un nombre
+                $("#p3r .next_btn").click(function(){
+                    $("#p3r").hide();
+                    $("#p4r").show();
+                });
+                $("#p4r .next_btn").click(function(){
+                    $("#p4r").hide();
+                    $("#p5r").show();
+                });
+                $("#p5r .next_btn").click(function(){
+                    $("#p5r").hide();
+                    $("#p6r").show();
+                });
+
             });
         </script>
     </head>
@@ -37,12 +60,12 @@
             </div>
             <div class="message" id="p2" >
                 <p>Recuerdas quien eres?</p>
-                <input type="button" value="SI" name="si_btn">
-                <input type="button" value="NO" name="no_btn">
+                <input type="button" value="SI" name="si_btn" id="si_btn">
+                <input type="button" value="NO" name="no_btn" id="no_btn">
             </div>
 
             <div class="message" id="p3r">
-                <p>Intenta recordar</p>
+                <p>Intenta recordar anda...</p>
                 <input type="text" name="name_user_register">
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
@@ -57,7 +80,24 @@
             </div>
             <div class="message" id="p6r">
                 <p>Hay muchas cosas aquí abajo y soy horrible con los
-                    nombres, así que piensa en algún código con el que saber que eres tu por sia caso</p>
+                    nombres, así que piensa en algún código con el que saber que eres tu por si acaso</p>
+                <input type="password" name="passw_user_register">
+                <input type="button" class="next_btn" name="next" value="Siguiente">
+            </div>
+            <div class="message" id="p7r">
+                <p>Habrá algo que se te de bien no? Qué eres? O un escurridizo ladrón?</p>
+                <div id="warrior">
+                    <img src="">
+                    <p> Un valeroso guerrero con mucha vitalidad </p>
+                </div>
+                <div id="wizard">
+                    <img src="">
+                    <p> Un poderoso e intelectual mago </p>
+                </div>
+                <div id="thief">
+                    <img src="">
+                    <p> Un escurridizo y hábil ladrón </p>
+                </div>
                 <input type="password" name="passw_user_register">
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
