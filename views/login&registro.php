@@ -15,14 +15,15 @@
                     $("#p1").hide();
                     $("#p2").show();
                 });
-                $(".si_btn").click(function(){
+                $("#si_btn").click(function(){
                     $("#p2").hide();
                     $("#p3l").show();
                 });
-                $(".no_btn").click(function(){
+                $("#no_btn").click(function(){
                     $("#p2").hide();
                     $("#p3r").show();
                 });
+                // register
                 //hacer que solo se active al tener un nombre
                 $("#p3r .next_btn").click(function(){
                     $("#p3r").hide();
@@ -36,6 +37,29 @@
                     $("#p5r").hide();
                     $("#p6r").show();
                 });
+                //hacer que solo se active al tener una contraseña
+                $("#p6r .next_btn").click(function(){
+                    $("#p6r").hide();
+                    $("#p7r").show();
+                });
+
+                // login
+                //hacer que solo se active al tener un nombre
+                $("#p3l .next_btn").click(function(){
+                    $("#p3l").hide();
+                    $("#p4l").show();
+                });
+                //hacer que solo se active al tener una contraseña
+                $("#p4l .next_btn").click(function(){
+                    $("#p4l").hide();
+                    $("#p5l").show();
+                });
+                $("#p5l .next_btn").click(function(){
+                    $("#p4l").hide();
+                    $("#p5l").show();
+                });
+
+
 
             });
         </script>
@@ -64,44 +88,52 @@
                 <input type="button" value="NO" name="no_btn" id="no_btn">
             </div>
 
+
+            <!--------------REGISTER------------------>
             <div class="message" id="p3r">
                 <p>Intenta recordar anda...</p>
-                <input type="text" name="name_user_register">
+                <input type="text"  id="new_user"  name="name_user_register">
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
+
             <div class="message" id="p4r">
                 <p>Te llamas <?php /*meter nombre recién escrito*/ ?> ? No es el mejor de los nombres...</p>
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
+
             <div class="message" id="p5r">
                 <p>Siento decirte que has caido en un lugar muy peligroso
                     y la única forma de salir es avanzando sin mirar atrás</p>
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
+
             <div class="message" id="p6r">
                 <p>Hay muchas cosas aquí abajo y soy horrible con los
                     nombres, así que piensa en algún código con el que saber que eres tu por si acaso</p>
-                <input type="password" name="passw_user_register">
+                <input type="password" id="new_passw" name="passw_user_register" >
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
+
             <div class="message" id="p7r">
-                <p>Habrá algo que se te de bien no? Qué eres? O un escurridizo ladrón?</p>
+                <p>Habrá algo que se te de bien no? Qué eres? </p>
                 <div id="warrior">
                     <img src="">
                     <p> Un valeroso guerrero con mucha vitalidad </p>
+                    <input type="button" class="next_btn" name="next" value="Esto">
                 </div>
                 <div id="wizard">
                     <img src="">
                     <p> Un poderoso e intelectual mago </p>
+                    <input type="button" class="next_btn" name="next" value="Esto">
                 </div>
                 <div id="thief">
                     <img src="">
                     <p> Un escurridizo y hábil ladrón </p>
+                    <input type="button" class="next_btn" name="next" value="Esto">
                 </div>
-                <input type="password" name="passw_user_register">
-                <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
 
+            <!----------------LOGIN-------------------->
             <div class="message" id="p3l">
                 <p>Pues yo no la verdad ¿Cómo te llamabas?</p>
                 <input type="text" name="name_user_login">
@@ -114,7 +146,7 @@
             </div>
             <div class="message" id="p5l">
                 <p>Ahhhh! Ya te recuerdo si... Estabas en la planta <?php /*meter planta dónde lo dejó el jugador*/ ?>
-                    no? A que esperas? Avanza!</p>
+                    no? A que esperas? Despierta!</p>
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
         </section>
