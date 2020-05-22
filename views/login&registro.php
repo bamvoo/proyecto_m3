@@ -97,12 +97,19 @@
             </div>
 
             <div class="message" id="p4r">
-                <p>Te llamas <?php /*meter nombre recién escrito*/ ?> ? No es el mejor de los nombres...</p>
+                <p>Te llamas
+                    <?php
+                        /*meter nombre recién escrito*/
+
+
+                    ?>
+                    ? No es el mejor de los nombres...
+                </p>
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
 
             <div class="message" id="p5r">
-                <p>Siento decirte que has caido en un lugar muy peligroso
+                <p>Siento decirte que has caído en un lugar muy peligroso
                     y la única forma de salir es avanzando sin mirar atrás</p>
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
