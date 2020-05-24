@@ -26,6 +26,10 @@
                 // register
                 //hacer que solo se active al tener un nombre
                 $("#p3r .next_btn").click(function(){
+                    // var n_u = $("#new_user").val();
+                    // if(n_u == null){
+                    //
+                    // }
                     $("#p3r").hide();
                     $("#p4r").show();
                 });
@@ -90,72 +94,85 @@
 
 
             <!--------------REGISTER------------------>
-            <div class="message" id="p3r">
-                <p>Intenta recordar anda...</p>
-                <input type="text"  id="new_user"  name="name_user_register">
-                <input type="button" class="next_btn" name="next" value="Siguiente">
-            </div>
-
-            <div class="message" id="p4r">
-                <p>Te llamas
-                    <?php
-                        /*meter nombre recién escrito*/
-
-
-                    ?>
-                    ? No es el mejor de los nombres...
-                </p>
-                <input type="button" class="next_btn" name="next" value="Siguiente">
-            </div>
-
-            <div class="message" id="p5r">
-                <p>Siento decirte que has caído en un lugar muy peligroso
-                    y la única forma de salir es avanzando sin mirar atrás</p>
-                <input type="button" class="next_btn" name="next" value="Siguiente">
-            </div>
-
-            <div class="message" id="p6r">
-                <p>Hay muchas cosas aquí abajo y soy horrible con los
-                    nombres, así que piensa en algún código con el que saber que eres tu por si acaso</p>
-                <input type="password" id="new_passw" name="passw_user_register" >
-                <input type="button" class="next_btn" name="next" value="Siguiente">
-            </div>
-
-            <div class="message" id="p7r">
-                <p>Habrá algo que se te de bien no? Qué eres? </p>
-                <div id="warrior">
-                    <img src="">
-                    <p> Un valeroso guerrero con mucha vitalidad </p>
-                    <input type="button" class="next_btn" name="next" value="Esto">
+            <form action="../controllers/AccessController.php" method="POST">
+                <div class="message" id="p3r">
+                    <p>Intenta recordar anda...</p>
+                        <input type="text"  id="new_user"  name="name_user_register">
+                        <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
-                <div id="wizard">
-                    <img src="">
-                    <p> Un poderoso e intelectual mago </p>
-                    <input type="button" class="next_btn" name="next" value="Esto">
-                </div>
-                <div id="thief">
-                    <img src="">
-                    <p> Un escurridizo y hábil ladrón </p>
-                    <input type="button" class="next_btn" name="next" value="Esto">
-                </div>
-            </div>
 
+                <div class="message" id="p4r">
+                    <p>Te llamas
+                        <?php
+                            /*meter nombre recién escrito*/
+                            if (filter_input(INPUT_POST, 'name_user_register') != null) {
+                                $result_string = (string) filter_input(INPUT_POST, 'name_user_register');
+                                echo $result_string;
+                            }
+
+    //                        $_SESSION['actcodi'] = 1;
+
+                        ?>
+                        ? No es el mejor de los nombres...
+                    </p>
+                    <input type="button" class="next_btn" name="next" value="Siguiente">
+                </div>
+
+                <div class="message" id="p5r">
+                    <p>Siento decirte que has caído en un lugar muy peligroso
+                        y la única forma de salir es avanzando sin mirar atrás</p>
+                    <input type="button" class="next_btn" name="next" value="Siguiente">
+                </div>
+
+                <div class="message" id="p6r">
+                    <p>Hay muchas cosas aquí abajo y soy horrible con los
+                        nombres, así que piensa en algún código con el que saber que eres tu por si acaso</p>
+                    <input type="password" id="new_passw" name="passw_user_register" >
+                    <input type="button" class="next_btn" name="next" value="Siguiente">
+                </div>
+
+                <div class="message" id="p7r">
+                    <p>Habrá algo que se te de bien no? Qué eres? </p>
+                    <div id="warrior">
+                        <img src="">
+                        <p> Un valeroso guerrero con mucha vitalidad </p>
+                        <input type="action" class="next_btn" name="next" value="Esto">
+                    </div>
+                    <div id="wizard">
+                        <img src="">
+                        <p> Un poderoso e intelectual mago </p>
+                        <input type="action" class="next_btn" name="next" value="Esto">
+                    </div>
+                    <div id="thief">
+                        <img src="">
+                        <p> Un escurridizo y hábil ladrón </p>
+                        <input type="action" class="next_btn" name="next" value="Esto">
+                    </div>
+                </div>
+            </form>
             <!----------------LOGIN-------------------->
-            <div class="message" id="p3l">
-                <p>Pues yo no la verdad ¿Cómo te llamabas?</p>
-                <input type="text" name="name_user_login">
-                <input type="button" class="next_btn" name="next" value="Siguiente">
-            </div>
-            <div class="message" id="p4l">
-                <p>Hay mucha gente con ese nombre... No hicimos algo como un código por si me olvidaba de ti?</p>
-                <input type="password" name="passw_user_login">
-                <input type="button" class="next_btn" name="next" value="Siguiente">
-            </div>
-            <div class="message" id="p5l">
-                <p>Ahhhh! Ya te recuerdo si... Estabas en la planta <?php /*meter planta dónde lo dejó el jugador*/ ?>
-                    no? A que esperas? Despierta!</p>
-                <input type="button" class="next_btn" name="next" value="Siguiente">
-            </div>
+            <form action="controllerspackage/AccessController.php" method="POST">
+                <div class="message" id="p3l">
+                    <p>Pues yo no la verdad ¿Cómo te llamabas?</p>
+                    <input type="text" name="name_user_login">
+                    <input type="button" class="next_btn" name="next" value="Siguiente">
+                </div>
+                <div class="message" id="p4l">
+                    <p>Hay mucha gente con ese nombre... No hicimos algo como un código por si me olvidaba de ti?</p>
+                    <input type="password" name="passw_user_login">
+                    <input type="button" class="next_btn" name="next" value="Siguiente">
+                </div>
+                <div class="message" id="p5l">
+                    <p>Ahhhh! Ya te recuerdo si... Estabas en la planta
+                        <?php
+                            /*meter planta dónde lo dejó el jugador*/
+
+
+                        ?>
+                        no? A que esperas? Despierta!</p>
+                    <input type="button" class="next_btn" name="next" value="Siguiente">
+                </div>
+            </form>
         </section>
 
         <footer class="bottom">
