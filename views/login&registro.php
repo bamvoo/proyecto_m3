@@ -136,17 +136,17 @@
                     <div id="warrior">
                         <img src="">
                         <p> Un valeroso guerrero con mucha vitalidad </p>
-                        <input type="action" class="next_btn" name="next" value="Esto">
+                        <input type="submit" class="next_btn" name="next" value="Esto">
                     </div>
                     <div id="wizard">
                         <img src="">
                         <p> Un poderoso e intelectual mago </p>
-                        <input type="action" class="next_btn" name="next" value="Esto">
+                        <input type="submit" class="next_btn" name="next" value="Esto">
                     </div>
                     <div id="thief">
                         <img src="">
                         <p> Un escurridizo y hábil ladrón </p>
-                        <input type="action" class="next_btn" name="next" value="Esto">
+                        <input type="submit" class="next_btn" name="next" value="Esto">
                     </div>
                 </div>
             </form>
@@ -170,7 +170,7 @@
 
                         ?>
                         no? A que esperas? Despierta!</p>
-                    <input type="button" class="next_btn" name="next" value="Siguiente">
+                    <input type="submit" class="next_btn" name="next" value="Siguiente">
                 </div>
             </form>
         </section>
