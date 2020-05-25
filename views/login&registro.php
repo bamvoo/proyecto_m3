@@ -136,17 +136,20 @@
                     <div id="warrior">
                         <img src="">
                         <p> Un valeroso guerrero con mucha vitalidad </p>
-                        <input type="submit" class="next_btn" name="next" value="Esto">
+                        <input type="radio" class="next_btn" name="clases" value="warrior">
                     </div>
                     <div id="wizard">
                         <img src="">
                         <p> Un poderoso e intelectual mago </p>
-                        <input type="submit" class="next_btn" name="next" value="Esto">
+                        <input type="radio" class="next_btn" name="clases" value="wizard">
                     </div>
                     <div id="thief">
                         <img src="">
                         <p> Un escurridizo y hábil ladrón </p>
-                        <input type="submit" class="next_btn" name="next" value="Esto">
+                        <input type="radio" class="next_btn" name="clases" value="thief">
+                    </div>
+                    <div>
+                        <input type="submit" class="next_btn" name="next" value="Comenzar">
                     </div>
                 </div>
             </form>

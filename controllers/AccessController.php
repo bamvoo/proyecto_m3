@@ -10,13 +10,31 @@ $ok = 0;
 $usuari_r = filter_input(INPUT_POST, 'name_user_register');
 $password_r = filter_input(INPUT_POST, 'passw_user_register');
 
+$class = filter_input(INPUT_POST, 'clases');
+
 $usuari_l = filter_input(INPUT_POST, 'name_user_login');
 $password_l = filter_input(INPUT_POST, 'passw_user_login');
 
 
 if ($usuari_r) {
-    $query = "INSERT INTO users (name, password, level, hp, class, state, attack, floor, power) VALUES 
-('" . $usuari_r . "','" . $password_r . "','" . $level . "','" . $hp . "','" . $class . "','" . $class . "','" . $class . "');";
+
+    if($class == "warrior"){
+        $hp = 20 ;
+        $attack = "hit";
+        $power = 6;
+    }
+    elseif($class == "thief"){
+        $hp = 16 ;
+        $attack = "cut";
+        $power = 4;
+    }
+    else{
+        $hp = 14;
+        $attack = "fire";
+        $power = 10;
+    }
+
+    $query = "INSERT INTO players (name, password, level, hp, class, state, attack, floor, power) VALUES ('" . $usuari_r . "','" . $password_r . "','" . 1 . "','" . $hp . "','" . $class . "','" . $state . "','" . 1 . "','" . $power . "');";
     $ok = $db->executeQuery($query);
     $usuari = $usuari_r;
 } else {
