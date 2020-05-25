@@ -22,17 +22,27 @@
                 $("#no_btn").click(function(){
                     $("#p2").hide();
                     $("#p3r").show();
+                    $("#p3r .next_btn").hide();
                 });
                 // register
-                //hacer que solo se active al tener un nombre
+                //HACER LUEGO
+                //hacer que no se active al tener un nombre creado
+
+                $("#new_user").change(function(){
+
+                    if($("#new_user").val().length >= 1 ){
+                        $("#p3r .next_btn").show();
+                    }
+                    else {
+                        alert()
+                    }
+                });
                 $("#p3r .next_btn").click(function(){
-                    // var n_u = $("#new_user").val();
-                    // if(n_u == null){
-                    //
-                    // }
                     $("#p3r").hide();
                     $("#p4r").show();
+                    $("#name").html($("#new_user").val());
                 });
+
                 $("#p4r .next_btn").click(function(){
                     $("#p4r").hide();
                     $("#p5r").show();
@@ -40,6 +50,16 @@
                 $("#p5r .next_btn").click(function(){
                     $("#p5r").hide();
                     $("#p6r").show();
+                    $("#p6r .next_btn").hide();
+                });
+
+                $("#new_passw").change(function(){
+                    if($("#new_passw").val().length >= 5 ){
+                        $("#p6r .next_btn").show();
+                    }
+                    else {
+                        alert(<?php echo "Hola"; ?>);
+                    }
                 });
                 //hacer que solo se active al tener una contraseña
                 $("#p6r .next_btn").click(function(){
@@ -97,22 +117,12 @@
             <form action="../controllers/AccessController.php" method="POST">
                 <div class="message" id="p3r">
                     <p>Intenta recordar anda...</p>
-                        <input type="text"  id="new_user"  name="name_user_register">
+                        <input type="text"  id="new_user"  name="name_user_register" >
                         <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
 
                 <div class="message" id="p4r">
-                    <p>Te llamas
-                        <?php
-                            /*meter nombre recién escrito*/
-                            if (filter_input(INPUT_POST, 'name_user_register') != null) {
-                                $result_string = (string) filter_input(INPUT_POST, 'name_user_register');
-                                echo $result_string;
-                            }
-
-    //                        $_SESSION['actcodi'] = 1;
-
-                        ?>
+                    <p>Te llamas <span id="name"></span>
                         ? No es el mejor de los nombres...
                     </p>
                     <input type="button" class="next_btn" name="next" value="Siguiente">
