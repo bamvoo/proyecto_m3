@@ -182,7 +182,7 @@
                     <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
                 <div class="message" id="p4l">
-                    <p>Hay mucha gente con ese nombre... No hicimos algo como un código por si me olvidaba de ti?</p>
+                    <p>No recuerdo nombre... No hicimos algo como un código por si me olvidaba de ti?</p>
                     <input type="password" name="passw_user_login">
                     <input type="submit" class="next_btn" name="next" value="Siguiente">
                 </div>
@@ -193,7 +193,7 @@
                     <?php
                         echo $_SESSION['userfloor'];
                     ?> no? A que esperas? Despierta!</p>
-                <input type="button" class="next_btn" name="next" value="Siguiente" onclick="$(location).attr('href','game.php')">
+                <input type="button" class="next_btn" name="next" value="Siguiente" onclick="$(location).attr('href','../views/game.php')">
             </div>
 
         </section>

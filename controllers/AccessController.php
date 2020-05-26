@@ -74,6 +74,6 @@ if ($usuari_l) {
 //        header('location: ../views/game.php');
     }
     else{
-        header('location: ../views/login&registro.php');
+        header('location: login&registro.php');
     }
 }
