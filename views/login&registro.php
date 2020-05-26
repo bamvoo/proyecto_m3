@@ -174,23 +174,18 @@
                 <div class="message" id="p4l">
                     <p>Hay mucha gente con ese nombre... No hicimos algo como un código por si me olvidaba de ti?</p>
                     <input type="password" name="passw_user_login">
-                    <input type="button" class="next_btn" name="next" value="Siguiente">
-                </div>
-                <div class="message" id="p5l">
-                    <p>Ahhhh! Ya te recuerdo si... Estabas en la planta
-                        <?php
-                            include_once '../adapters/DataBaseConect.php';
-                            $user_login = filter_input(INPUT_POST, 'name_user_login');
-                            $db = DataBaseConect::getConnection();
-                            $query = "SELECT floor FROM players WHERE name =  $user_login";
-                            var_dump($query);
-                            $result = $db->executeQuery($query);
-                            echo $result;
-
-                        ?> no? A que esperas? Despierta!</p>
                     <input type="submit" class="next_btn" name="next" value="Siguiente">
                 </div>
             </form>
+
+            <div class="message" id="p5l">
+                <p>Ahhhh! Ya te recuerdo si... Estabas en la planta
+                    <?php
+                        echo $_SESSION['userfloor'];
+                    ?> no? A que esperas? Despierta!</p>
+                <input type="button" class="next_btn" name="next" value="Siguiente" onclick="$(location).attr('href','game.php')">
+            </div>
+
         </section>
 
         <footer class="bottom">
