@@ -40,7 +40,6 @@
                     $("#p3r").hide();
                     $("#p4r").show();
                     $("#name").html($("#new_user").val());
-                    $("#floor").html($("#").val());
                 });
 
                 $("#p4r .next_btn").click(function(){
@@ -60,8 +59,8 @@
                     else{
                         $("#p6r .next_btn").hide();
                     }
-
                 });
+
                 //hacer que solo se active al tener una contraseña
                 $("#p6r .next_btn").click(function(){
                     $("#p6r").hide();
@@ -69,7 +68,18 @@
                 });
 
                 // login
-                //hacer que solo se active al tener un nombre
+                $("#p3l .next_btn").hide();
+
+                $("#name_l").change(function(){
+                    if($("#name_l").val().length > 0 ){
+                        $("#p3l .next_btn").show();
+                    }
+                    else{
+                        $("#p3l .next_btn").hide();
+                    }
+
+                });
+
                 $("#p3l .next_btn").click(function(){
                     $("#p3l").hide();
                     $("#p4l").show();
@@ -165,7 +175,7 @@
                 </div>
             </form>
             <!----------------LOGIN-------------------->
-            <form action="controllerspackage/AccessController.php" method="POST">
+            <form action="controllers/AccessController.php" method="POST">
                 <div class="message" id="p3l">
                     <p>Pues yo no la verdad ¿Cómo te llamabas?</p>
                     <input type="text" name="name_user_login" id="name_l">

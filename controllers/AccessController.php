@@ -16,6 +16,10 @@ $password_l = filter_input(INPUT_POST, 'passw_user_login');
 
 if ($usuari_r) {
 
+    $level = 1;
+    $floor = 1;
+    $state = "none";
+
     if($class == "warrior"){
         $hp = 20 ;
         $power = 6;
@@ -29,9 +33,20 @@ if ($usuari_r) {
         $power = 10;
     }
 
-    $query = "INSERT INTO players (name, password, level, hp, class, state, floor, power) VALUES ('" . $usuari_r . "','" . $password_r . "','" . 1 . "','" . $hp . "','" . $class . "','" . "none" . "','" . 1 . "','" . $power . "')";
+    $query = "INSERT INTO players (name, password, level, hp, class, state, floor, power) VALUES ('" . $usuari_r . "','" . $password_r . "','" . $level . "','" . $hp . "','" . $class . "','" . $state . "','" . $floor . "','" . $power . "')";
     $ok = $db->executeQuery($query);
     if ($ok) {
+        $datauser3 = [];
+        $db->executeQuery($query, $datauser3);
+        $_SESSION['username'] = $usuari_r;
+        $_SESSION['userpasswd'] = $password_r;
+        $_SESSION['userhp'] = $hp;
+        $_SESSION['userclass'] = $class;
+        $_SESSION['userlevel'] = $level;
+        $_SESSION['userstate'] = $state;
+        $_SESSION['userfloor'] = $floor;
+        $_SESSION['userpower'] = $power;
+
         header('location: ../views/game.php');
     }
 }
