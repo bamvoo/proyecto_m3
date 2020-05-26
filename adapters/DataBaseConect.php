@@ -12,7 +12,7 @@ class DataBaseConect
     public static function getConnection()
     {
         if (self::$connection == null) {
-            self::$connection = new MySQLAdapter("127.0.0.1", 3306, "userdaw1", "M3phpdaw@", "demophp");
+            self::$connection = new MySQLAdapter("127.0.0.1", 3306, "userdaw1", "M3phpdaw@", "projecto_m3");
             if (strcmp(self::$connection->connect(), "done") != 0) {
                 self::$connection = null;
             }

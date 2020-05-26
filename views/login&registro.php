@@ -40,6 +40,7 @@
                     $("#p3r").hide();
                     $("#p4r").show();
                     $("#name").html($("#new_user").val());
+                    $("#floor").html($("#").val());
                 });
 
                 $("#p4r .next_btn").click(function(){
@@ -167,7 +168,7 @@
             <form action="controllerspackage/AccessController.php" method="POST">
                 <div class="message" id="p3l">
                     <p>Pues yo no la verdad ¿Cómo te llamabas?</p>
-                    <input type="text" name="name_user_login">
+                    <input type="text" name="name_user_login" id="name_l">
                     <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
                 <div class="message" id="p4l">
@@ -178,11 +179,15 @@
                 <div class="message" id="p5l">
                     <p>Ahhhh! Ya te recuerdo si... Estabas en la planta
                         <?php
-                            /*meter planta dónde lo dejó el jugador*/
+                            include_once '../adapters/DataBaseConect.php';
+                            $user_login = filter_input(INPUT_POST, 'name_user_login');
+                            $db = DataBaseConect::getConnection();
+                            $query = "SELECT floor FROM players WHERE name =  $user_login";
+                            var_dump($query);
+                            $result = $db->executeQuery($query);
+                            echo $result;
 
-
-                        ?>
-                        no? A que esperas? Despierta!</p>
+                        ?> no? A que esperas? Despierta!</p>
                     <input type="submit" class="next_btn" name="next" value="Siguiente">
                 </div>
             </form>

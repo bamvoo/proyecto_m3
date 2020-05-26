@@ -5,7 +5,7 @@ include_once '../adapters/DataBaseConect.php';
 
 $db = DataBaseConect::getConnection();
 $datauser = [];
-$ok = 0;
+//$ok = 0;
 
 $usuari_r = filter_input(INPUT_POST, 'name_user_register');
 $password_r = filter_input(INPUT_POST, 'passw_user_register');
@@ -30,10 +30,10 @@ if ($usuari_r) {
         $power = 10;
     }
 
-    $query = "INSERT INTO players (name, password, level, hp, class, state, floor, power) VALUES ('" . $usuari_r . "','" . $password_r . "','" . 1 . "','" . $hp . "','" . $class . "','" . "none" . "','" . 1 . "','" . $power . "');";
+    $query = "INSERT INTO players (name, password, level, hp, class, state, floor, power) VALUES ('" . $usuari_r . "','" . $password_r . "','" . 1 . "','" . $hp . "','" . $class . "','" . "none" . "','" . 1 . "','" . $power . "')";
     $ok = $db->executeQuery($query);
     if ($ok) {
-        $query = "SELECT name, password, level, hp, class, state, floor, power FROM players WHERE name = '" . $usuari_r . "';";
+//        $query = "SELECT name, password, level, hp, class, state, floor, power FROM players WHERE name = '" . $usuari_r . "';";
         header('location: ../views/game.php');
     }
 }
