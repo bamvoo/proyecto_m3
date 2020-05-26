@@ -29,12 +29,11 @@
                 //hacer que no se active al tener un nombre creado
 
                 $("#new_user").change(function(){
-
                     if($("#new_user").val().length >= 1 ){
                         $("#p3r .next_btn").show();
                     }
-                    else {
-                        alert()
+                    else{
+                        $("#p3r .next_btn").hide();
                     }
                 });
                 $("#p3r .next_btn").click(function(){
@@ -57,9 +56,10 @@
                     if($("#new_passw").val().length >= 5 ){
                         $("#p6r .next_btn").show();
                     }
-                    else {
-                        alert(<?php echo "Hola"; ?>);
+                    else{
+                        $("#p6r .next_btn").hide();
                     }
+
                 });
                 //hacer que solo se active al tener una contraseña
                 $("#p6r .next_btn").click(function(){
