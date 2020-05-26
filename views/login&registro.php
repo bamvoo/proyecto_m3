@@ -175,7 +175,7 @@
                 </div>
             </form>
             <!----------------LOGIN-------------------->
-            <form action="controllers/AccessController.php" method="POST">
+            <form action="../controllers/AccessController.php" method="GET">
                 <div class="message" id="p3l">
                     <p>Pues yo no la verdad ¿Cómo te llamabas?</p>
                     <input type="text" name="name_user_login" id="name_l">
@@ -187,14 +187,14 @@
                     <input type="submit" class="next_btn" name="next" value="Siguiente">
                 </div>
             </form>
-
-            <div class="message" id="p5l">
-                <p>Ahhhh! Ya te recuerdo si... Estabas en la planta
-                    <?php
-                        echo $_SESSION['userfloor'];
-                    ?> no? A que esperas? Despierta!</p>
-                <input type="button" class="next_btn" name="next" value="Siguiente" onclick="$(location).attr('href','../views/game.php')">
-            </div>
+<!---->
+<!--            <div class="message" id="p5l">-->
+<!--                <p>Ahhhh! Ya te recuerdo si... Estabas en la planta-->
+<!--                    --><?php
+//                        echo $_SESSION['userfloor'];
+//                    ?><!-- no? A que esperas? Despierta!</p>-->
+<!--                <input type="button" class="next_btn" name="next" value="Siguiente" onclick="$(location).attr('href','../views/game.php')">-->
+<!--            </div>-->
 
         </section>
 

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 include_once '../adapters/DataBaseConect.php';
 
+
 $db = DataBaseConect::getConnection();
 //$ok = 0;
 
@@ -13,6 +14,7 @@ $class = filter_input(INPUT_POST, 'clases');
 
 $usuari_l = filter_input(INPUT_POST, 'name_user_login');
 $password_l = filter_input(INPUT_POST, 'passw_user_login');
+
 
 if ($usuari_r) {
 
@@ -56,13 +58,14 @@ $datauser2 = [];
 
 if ($usuari_l) {
 
-    $query = "SELECT level FROM players WHERE name = '" . $usuari_l . "' and password = '" . $password_l . "';";
-    $db->executeQuery($query, $datauser2);
-    $ok = $datauser2[0]['level'];
+    $query = "SELECT name, password, level, hp, class, state, floor, power FROM players WHERE name = '" . $usuari_l . "'";
+    $ok = $db->executeQuery($query, $datauser2);
 
     if($ok){
+
         $query = "SELECT name, password, level, hp, class, state, floor, power FROM players WHERE name = '" . $usuari_l . "'";
-        $db->executeQuery($query, $datauser);
+        $ok = $db->executeQuery($query, $datauser);
+
         $_SESSION['username'] = $usuari_l;
         $_SESSION['userlevel'] = $datauser[0]['level'];
         $_SESSION['userpasswd'] = $password_l;
@@ -73,6 +76,7 @@ if ($usuari_l) {
         $_SESSION['userpower'] = $datauser[0]['power'];
 //        header('location: ../views/game.php');
     }
+
     else{
         header('location: login&registro.php');
     }
