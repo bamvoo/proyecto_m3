@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="DemoProjectWebOO" />
     <orderEntry type="module" module-name="DemoProjectWebOOPlus" />
+    <orderEntry type="module" module-name="DemoProjectWeb2" />
   </component>
 </module>
