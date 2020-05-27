@@ -53,8 +53,9 @@
                     <!-- juegos -->
                 </div>
 
-                <input type="string" name="result" placeholder="Escriu el resultat"/>
-                <input type="submit" value="Comprobar" id="check_si" name="enviar"/>
+                <input type="button" value="Dormir" id="get_txt" />
+                <input type="button" value="Generar ficha" id="get_txt" />
+                <input type="button" value="Subir ficha" id="post_txt" />
             </form>
         </div>
     </article>
