@@ -25,7 +25,32 @@
     <article>
         <?php
             include_once '../controllers/GameController.php';
+
+            //mostrar enemigo
+
+            //vida      //Ataque
+
+            //bolsa
+
+            //generar ficha
+            //subir ficha
+
         ?>
+        <div id="formulario">
+            <form action = "" method="POST">
+                <div>
+                    <!-- mostrar enemigo -->
+                    <input>
+                    <img src="../public/img/<?php //imagen ?>">
+                </div>
+                <div>
+                    
+                </div>
+
+                <input type="string" name="result" placeholder="Escriu el resultat"/>
+                <input type="submit" value="Comprobar" id="check_si" name="enviar"/>
+            </form>
+        </div>
     </article>
 </section>
 
