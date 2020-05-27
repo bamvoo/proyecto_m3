@@ -24,7 +24,7 @@
     <h3>Bienvenido al Calabozo</h3>
     <article>
         <?php
-
+            include_once '../controllers/GameController.php';
         ?>
     </article>
 </section>

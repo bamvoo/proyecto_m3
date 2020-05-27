@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
 
+session_destroy();
+session_start();
+
 include_once '../adapters/DataBaseConect.php';
 
 
@@ -74,9 +77,9 @@ if ($usuari_l) {
         $_SESSION['userstate'] = $datauser[0]['state'];
         $_SESSION['userfloor'] = $datauser[0]['floor'];
         $_SESSION['userpower'] = $datauser[0]['power'];
-//        header('location: ../views/game.php');
-    }
 
+        header('location: ../views/game.php');
+    }
     else{
         header('location: login&registro.php');
     }

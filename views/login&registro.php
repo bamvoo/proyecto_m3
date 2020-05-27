@@ -175,14 +175,14 @@
                 </div>
             </form>
             <!----------------LOGIN-------------------->
-            <form action="../controllers/AccessController.php" method="GET">
+            <form action="../controllers/AccessController.php" method="POST">
                 <div class="message" id="p3l">
                     <p>Pues yo no la verdad ¿Cómo te llamabas?</p>
                     <input type="text" name="name_user_login" id="name_l">
                     <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
                 <div class="message" id="p4l">
-                    <p>No recuerdo nombre... No hicimos algo como un código por si me olvidaba de ti?</p>
+                    <p>Ese nombre me suena... No hicimos algo como un código por si me olvidaba de ti?</p>
                     <input type="password" name="passw_user_login">
                     <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
