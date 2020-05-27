@@ -38,13 +38,19 @@
         ?>
         <div id="formulario">
             <form action = "" method="POST">
-                <div>
+                <div id="mob_div">
                     <!-- mostrar enemigo -->
                     <input>
                     <img src="../public/img/<?php //imagen ?>">
                 </div>
-                <div>
-                    
+                <div id="pj_div">
+                    <!-- vida -->
+                    HP:<input type="text" name="hp" value="" readonly>
+                    <!-- attack btn-->
+                    <input type="button" name="attack_btn" value="Atacar">
+                </div>
+                <div id="bag_div">
+                    <!-- juegos -->
                 </div>
 
                 <input type="string" name="result" placeholder="Escriu el resultat"/>
