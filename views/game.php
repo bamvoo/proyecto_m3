@@ -37,10 +37,10 @@
 
         ?>
         <div id="formulario">
-            <form action = "" method="POST">
+            <form action = "" method="GET">
                 <div id="mob_div">
                     <!-- mostrar enemigo -->
-                    <input>
+                    <input type="text" name="mob" value="" readonly>
                     <img src="../public/img/<?php //imagen ?>">
                 </div>
                 <div id="pj_div">

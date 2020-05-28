@@ -1,12 +1,16 @@
 <?php
+declare(strict_types=1);
 
 session_start();
 
-include_once '../adapters/DataBaseConect.php';
 include_once '../controllers/UserDataAccesObject.php';
 include_once '../models/User.php';
+include_once '../adapters/DataBaseConect.php';
 
-function console_log( $data ){
+
+
+function console_log( $data )
+{
     echo '<script>';
     echo 'console.log('. json_encode( $data ) .')';
     echo '</script>';
@@ -14,21 +18,44 @@ function console_log( $data ){
 
 
 
-function generateEnemy()
+function generateMob()
+{
+
+    $db = DataBaseConect::getConnection();
+
+    //obtener mobs
+    $query = "SELECT name, level, hp, weakness, resistance, attack, power FROM mobs";
+    $ok = $db->executeQuery($query);
+    if ($ok) {
+        $datauser3 = [];
+        $db->executeQuery($query, $datauser3);
+        $_SESSION['mobname'] = $datauser3[$num_mobs]['name'];
+        $_SESSION['moblevel'] = $datauser3[$num_mobs]['name'];
+    }
+
+}
+
+function generateRandomMob()
 {
     //obtener un enemigo aleatorio con fuerza dependiendo del piso
 
+    $db = DataBaseConect::getConnection();
+
+    //número de mobs en bbdd
+    $num_mobs_q = "SELECT COUNT(*) FROM mobs";
+    $num_mobs = $db->executeQuery($num_mobs_q);
+    //var_dump($num_mobs);
+    $num_mobs = rand(0,$num_mobs);
 }
 
 function generateObject()
 {
     //
-
 }
 
 function useObject()
 {
-
+    //
 }
 
 function simulateCombat()
