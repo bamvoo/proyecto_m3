@@ -40,22 +40,23 @@
             <form action = "" method="GET">
                 <div id="mob_div">
                     <!-- mostrar enemigo -->
-                    <input type="text" name="mob" value="" readonly>
-                    <img src="../public/img/<?php //imagen ?>">
+                    <input type="text" name="mob_name" value="<?php $_SESSION['mobname'] ?>" readonly>
+                    <input type="text" name="mob_life" value="<?php $_SESSION['mobname'] ?>" readonly>
+                    <img src="../public/img/<?php $_SESSION['mobname'] ?>">
                 </div>
                 <div id="pj_div">
                     <!-- vida -->
-                    HP:<input type="text" name="hp" value="" readonly>
+                    HP:<input type="text" name="hp" value="<?php $_SESSION['userhp'] ?>" readonly>
                     <!-- attack btn-->
-                    <input type="button" name="attack_btn" value="Atacar">
+                    <input type="submit" name="attack_btn" value="Atacar">
                 </div>
                 <div id="bag_div">
                     <!-- juegos -->
                 </div>
 
-                <input type="button" value="Dormir" id="get_txt" />
-                <input type="button" value="Generar ficha" id="get_txt" />
-                <input type="button" value="Subir ficha" id="post_txt" />
+                <input type="submit" name="dormir" value="Dormir" id="get_txt" />
+                <input type="submit" name="gen_txt" value="Generar ficha" id="get_txt" />
+                <input type="submit" name="update_pj" value="Subir ficha" id="update_pj" />
             </form>
         </div>
     </article>
