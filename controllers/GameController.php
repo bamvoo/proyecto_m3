@@ -74,6 +74,20 @@ function useObject($name_obj)
     $db = DataBaseConect::getConnection();
     $effect_q = "SELECT effect FROM objects WHERE name =". $name_obj;
     $num_q = "SELECT num FROM objects WHERE name =". $name_obj;
+    $effect_q = $db->executeQuery($effect_q);
+    $num_q = $db->executeQuery($num_q);
+    if($effect_q == "heal"){
+        //$_SESSION['userhp'] = $_SESSION['userhp'] + $num_q
+    }
+    else{
+        if($_SESSION['mobhp'] < $num_q){
+            //matar mob
+        }
+        else{
+            //$_SESSION['mobhp'] = $_SESSION['mobhp'] - $num_q;
+        }
+    }
+
 }
 
 function simulateCombat()
