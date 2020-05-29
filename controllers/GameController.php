@@ -60,15 +60,20 @@ function generateObject()
     $datauser = [];
     $ok = $db->executeQuery($query, $datauser);
     $num_obj = rand(1,sizeof($datauser));
-    $_SESSION['obj_effect'] = $datauser[$num_obj]['effect'];
-    $_SESSION['obj_num'] = $datauser[$num_obj]['num'];
+//    $_SESSION['obj_effect'] = $datauser[$num_obj]['effect'];
+//    $_SESSION['obj_num'] = $datauser[$num_obj]['num'];
 
-    return $datauser[$num_obj]['name'];
+    $name_obj = $datauser[$num_obj]['name'];
+
+    //añadir botón con el nombre del objeto en el id = bag_div
+    //y hacer que llame a la function useObject
 }
 
-function useObject()
+function useObject($name_obj)
 {
-    //
+    $db = DataBaseConect::getConnection();
+    $effect_q = "SELECT effect FROM objects WHERE name =". $name_obj;
+    $num_q = "SELECT num FROM objects WHERE name =". $name_obj;
 }
 
 function simulateCombat()
