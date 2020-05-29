@@ -55,6 +55,9 @@ function generateObject($mob_level)
     //obtener un objeto dependiendo del nivel del mob derrotado
     $db = DataBaseConect::getConnection();
     $query = "SELECT name, effect, num FROM objects";
+
+
+
 }
 
 function useObject()
