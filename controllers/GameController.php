@@ -99,6 +99,9 @@ function simulateCombat()
     }
     if($_SESSION['mobhp'] < $_SESSION['userpower']){
         //matar mob
+        //obtener obj
+        //subir en 1 la planta
+        //cada 3 plantas sube 1 nivel
     }
     else{
         //$_SESSION['mobhp'] = $_SESSION['mobhp'] - $_SESSION['userpower'];
@@ -137,6 +140,12 @@ function rechargeFromRest()
     //cargar avance
 }
 
+function end()
+{
+    //delete de user
+    //borrar sessions
+    //mostrar pantalla de FIN
+}
 
 function generateTxt()
 {
