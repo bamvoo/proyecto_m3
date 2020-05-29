@@ -24,7 +24,7 @@ function generateMob()
     $db = DataBaseConect::getConnection();
 
     //obtener mobs
-    $query = "SELECT name, level, hp, weakness, resistance, attack, power FROM mobs";
+    $query = "SELECT name, level, hp, weakness, resistance, attack FROM mobs";
     $ok = $db->executeQuery($query);
     if ($ok) {
         $datauser3 = [];
@@ -32,6 +32,10 @@ function generateMob()
         $num_mobs = generateRandomMob();
         $_SESSION['mobname'] = $datauser3[$num_mobs]['name'];
         $_SESSION['moblevel'] = $datauser3[$num_mobs]['level'];
+        $_SESSION['mobhp'] = $datauser3[$num_mobs]['hp'];
+        $_SESSION['mobwkn'] = $datauser3[$num_mobs]['weakness'];
+        $_SESSION['mobrst'] = $datauser3[$num_mobs]['resistance'];
+        $_SESSION['mobatk'] = $datauser3[$num_mobs]['attack'];
     }
     else{
         echo "no genera mob";
@@ -73,7 +77,12 @@ function simulateCombat()
 
     //bajar vida pj y mob
 
+    //bajar más dependiendo de ventaja o desventaja
+
+    //si la vida del pj llega a cero mostrar FIN y eliminar pj de tabla
+
 }
+
 
 function nextBattle()
 {
