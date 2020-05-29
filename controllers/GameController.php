@@ -94,6 +94,15 @@ function simulateCombat()
 {
     //generar daño
 
+    if($_SESSION['userhp'] < $_SESSION['mobatk']){
+        //matar user / mostrar FIN
+    }
+    if($_SESSION['mobhp'] < $_SESSION['userpower']){
+        //matar mob
+    }
+    else{
+        //$_SESSION['mobhp'] = $_SESSION['mobhp'] - $_SESSION['userpower'];
+    }
     //bajar vida pj y mob
 
     //bajar más dependiendo de ventaja o desventaja
