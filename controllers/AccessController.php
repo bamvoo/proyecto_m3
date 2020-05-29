@@ -41,8 +41,8 @@ if ($usuari_r) {
     $query = "INSERT INTO players (name, password, level, hp, class, state, floor, power) VALUES ('" . $usuari_r . "','" . $password_r . "','" . $level . "','" . $hp . "','" . $class . "','" . $state . "','" . $floor . "','" . $power . "')";
     $ok = $db->executeQuery($query);
     if ($ok) {
-        $datauser3 = [];
-        $db->executeQuery($query, $datauser3);
+//        $datauser3 = [];
+//        $db->executeQuery($query, $datauser3);
         $_SESSION['username'] = $usuari_r;
         $_SESSION['userpasswd'] = $password_r;
         $_SESSION['userhp'] = $hp;

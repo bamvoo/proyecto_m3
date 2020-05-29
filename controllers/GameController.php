@@ -31,12 +31,11 @@ function generateMob()
         $db->executeQuery($query, $datauser3);
         $num_mobs = generateRandomMob();
         $_SESSION['mobname'] = $datauser3[$num_mobs]['name'];
-        $_SESSION['moblevel'] = $datauser3[$num_mobs]['name'];
+        $_SESSION['moblevel'] = $datauser3[$num_mobs]['level'];
     }
     else{
         echo "no genera mob";
     }
-
 }
 
 function generateRandomMob()
@@ -46,18 +45,21 @@ function generateRandomMob()
     $num_mobs_q = "SELECT COUNT(*) FROM mobs";
     $num_mobs = $db->executeQuery($num_mobs_q);
     //var_dump($num_mobs);
-    return rand(0,$num_mobs);
+    return rand(1,$num_mobs);
 
 }
 
-function generateObject($mob_level)
+function generateObject()
 {
-    //obtener un objeto dependiendo del nivel del mob derrotado
     $db = DataBaseConect::getConnection();
     $query = "SELECT name, effect, num FROM objects";
+    $datauser = [];
+    $ok = $db->executeQuery($query, $datauser);
+    $num_obj = rand(1,sizeof($datauser));
+    $_SESSION['obj_effect'] = $datauser[$num_obj]['effect'];
+    $_SESSION['obj_num'] = $datauser[$num_obj]['num'];
 
-
-
+    return $datauser[$num_obj]['name'];
 }
 
 function useObject()
