@@ -73,8 +73,6 @@ function useObject($name_obj)
 
 function simulateCombat()
 {
-    var_dump("hola");
-    die;
     //generar daño
     if($_SESSION['userhp'] <= $_SESSION['mobatk']){
         //matar user / mostrar FIN
@@ -88,11 +86,11 @@ function simulateCombat()
     if($_SESSION['mobhp'] <= $_SESSION['userpower']){
         //matar mob
         nextBattle();
-        //obtener obj
-        generateObject();
         //cada 3 plantas sube 1 nivel
     }
     else{
+//        var_dump("sd");
+//        die;
         $_SESSION['mobhp'] = $_SESSION['mobhp'] - $_SESSION['userpower'];
     }
     //bajar vida pj y mob
@@ -106,8 +104,17 @@ function simulateCombat()
 function nextBattle()
 {
     //cambiar enemigo
+    generateMob();
 
     //bajar nivel
+    $db = DataBaseConect::getConnection();
+    $_SESSION['userfloor'] = $_SESSION['userfloor'] + 1;
+    $upd_user = "UPDATE players SET floor=".$_SESSION['userfloor']." WHERE name=".$_SESSION['username'];
+    $db->executeQuery($upd_user);
+
+    //obtener obj
+    generateObject();
+
 
 }
 
