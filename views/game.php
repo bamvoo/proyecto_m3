@@ -26,6 +26,7 @@
         <div id="formulario">
 
             <?php
+
                 include_once '../controllers/GameController.php';
 
                 if(isset($_POST['attack_btn'])){
@@ -50,7 +51,6 @@
 
             ?>
             <form action = "" method="POST">
-                <input type="text" value="atacar" name="atacar">
                 <input type='submit' name='attack_btn' value='Atacar' id='attack_btn'>
             </form>
             <form action = "../controllers/" method="GET">

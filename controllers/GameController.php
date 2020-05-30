@@ -41,7 +41,7 @@ function generateObject()
     $query = "SELECT name, effect, num FROM objects";
     $datauser = [];
     $ok = $db->executeQuery($query, $datauser);
-    $num_obj = rand(1,sizeof($datauser));
+    $num_obj = rand(0,3);
 //    $_SESSION['obj_effect'] = $datauser[$num_obj]['effect'];
 //    $_SESSION['obj_num'] = $datauser[$num_obj]['num'];
 
@@ -73,20 +73,27 @@ function useObject($name_obj)
 
 function simulateCombat()
 {
+    var_dump("hola");
+    die;
     //generar daño
-
-
     if($_SESSION['userhp'] <= $_SESSION['mobatk']){
         //matar user / mostrar FIN
+        $db = DataBaseConect::getConnection();
+        $del_user = "DELETE FROM players WHERE name =". $_SESSION['username'];
+//        var_dump($del_user);
+//        die;
+        $db->executeQuery($del_user);
+        header('location: ../views/game.php');
     }
-    if($_SESSION['mobhp'] < $_SESSION['userpower']){
+    if($_SESSION['mobhp'] <= $_SESSION['userpower']){
         //matar mob
+        nextBattle();
         //obtener obj
-        //subir en 1 la planta
+        generateObject();
         //cada 3 plantas sube 1 nivel
     }
     else{
-        //$_SESSION['mobhp'] = $_SESSION['mobhp'] - $_SESSION['userpower'];
+        $_SESSION['mobhp'] = $_SESSION['mobhp'] - $_SESSION['userpower'];
     }
     //bajar vida pj y mob
 
