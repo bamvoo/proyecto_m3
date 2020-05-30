@@ -22,11 +22,7 @@
         <section id="central">
             <article>
                 <div>
-                    <h3>Bienvenido al Calabozo</h3>
-                </div>
-                <div>
-                    <input type="button" name="btn1" value="Adentrarse al calabozo">
-                    <input type="button" name="btn2" value="Hall de la fama">
+                    <h3>HAS MUERTO</h3>
                 </div>
                 <?php
 

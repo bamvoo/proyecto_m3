@@ -73,6 +73,7 @@ function useObject($name_obj)
 
 function simulateCombat()
 {
+
     //generar daño
     if($_SESSION['userhp'] <= $_SESSION['mobatk']){
         //matar user / mostrar FIN
@@ -81,23 +82,18 @@ function simulateCombat()
 //        var_dump($del_user);
 //        die;
         $db->executeQuery($del_user);
-        header('location: ../views/game.php');
+        header('location: ../views/end.php');
     }
     if($_SESSION['mobhp'] <= $_SESSION['userpower']){
         //matar mob
+        $_SESSION['userhp'] = $_SESSION['userhp'] - $_SESSION['mobatk'];
         nextBattle();
-        //cada 3 plantas sube 1 nivel
     }
     else{
-//        var_dump("sd");
-//        die;
         $_SESSION['mobhp'] = $_SESSION['mobhp'] - $_SESSION['userpower'];
+        $_SESSION['userhp'] = $_SESSION['userhp'] - $_SESSION['mobatk'];
+
     }
-    //bajar vida pj y mob
-
-    //bajar más dependiendo de ventaja o desventaja
-
-    //si la vida del pj llega a cero mostrar FIN y eliminar pj de tabla
 
 }
 
