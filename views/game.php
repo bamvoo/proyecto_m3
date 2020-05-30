@@ -31,6 +31,10 @@
 
                 if(isset($_POST['attack_btn'])){
                     simulateCombat();
+//                    echo '
+//                    <script type="text/javascript">
+//                        location.reload();
+//                    </script>';
                 }
 
 
