@@ -41,17 +41,18 @@
 
                 echo "
                     <div id='mob_div'>
-                        <div>$_SESSION['mobname']</div>
-                        <input type='text' name='mob_life' value='$_SESSION['mobname']' readonly>
-                        <img src='../public/img/$_SESSION['mobname']'>
+                        <div>".$_SESSION['mobname']."</div>
+                        <div>".$_SESSION['mobname']."</div>
+                        <div><img src='../public/img/".$_SESSION['mobname']."'></div>
                     </div>
                     <div id='pj_div'>
-                    <input type="text" name="hp" value="HP:$_SESSION['userhp']" readonly>
-                        <!-- attack btn-->
-                        <input type="submit" name="attack_btn" value="Atacar">
+                        <div>HP:".$_SESSION['userhp']."</div>
+                        <form>
+                            <input type='button' name='attack_btn' value='Atacar'>
+                        </form>
                     </div>
-                    <div id="bag_div">
-                        <!-- juegos -->
+                    <div id='bag_div'>
+                        
                     </div>
                 "
             ?>
