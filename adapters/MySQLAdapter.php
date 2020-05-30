@@ -45,7 +45,7 @@ class MySQLAdapter
         }
     }
 
-    public function executeQuery(string $query, array &$dataset = null): bool
+    public function executeQuery(string $query, array &$dataset = null)
     {
         if ($this->connection == null and strcmp($this->connect(), "done") != 0) {
             return false;

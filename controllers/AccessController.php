@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-session_destroy();
+//session_destroy();
 session_start();
 
 include_once '../adapters/DataBaseConect.php';

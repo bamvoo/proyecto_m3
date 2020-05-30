@@ -29,7 +29,7 @@ function generateMob()
     if ($ok) {
         $datauser3 = [];
         $db->executeQuery($query, $datauser3);
-        $num_mobs = generateRandomMob();
+        $num_mobs = rand(1,6);
         $_SESSION['mobname'] = $datauser3[$num_mobs]['name'];
         $_SESSION['moblevel'] = $datauser3[$num_mobs]['level'];
         $_SESSION['mobhp'] = $datauser3[$num_mobs]['hp'];
@@ -40,17 +40,6 @@ function generateMob()
     else{
         echo "no genera mob";
     }
-}
-
-function generateRandomMob()
-{
-    //obtener un enemigo aleatorio con fuerza dependiendo del piso
-    $db = DataBaseConect::getConnection();
-    $num_mobs_q = "SELECT COUNT(*) FROM mobs";
-    $num_mobs = $db->executeQuery($num_mobs_q);
-    //var_dump($num_mobs);
-    return rand(1,$num_mobs);
-
 }
 
 function generateObject()
