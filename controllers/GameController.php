@@ -9,14 +9,6 @@ include_once '../adapters/DataBaseConect.php';
 
 
 
-function console_log( $data )
-{
-    echo '<script>';
-    echo 'console.log('. json_encode( $data ) .')';
-    echo '</script>';
-}
-
-
 
 function generateMob()
 {
@@ -29,7 +21,8 @@ function generateMob()
     if ($ok) {
         $datauser3 = [];
         $db->executeQuery($query, $datauser3);
-        $num_mobs = rand(1,6);
+        $num_mobs = rand(0,2);
+
         $_SESSION['mobname'] = $datauser3[$num_mobs]['name'];
         $_SESSION['moblevel'] = $datauser3[$num_mobs]['level'];
         $_SESSION['mobhp'] = $datauser3[$num_mobs]['hp'];
@@ -66,14 +59,14 @@ function useObject($name_obj)
     $effect_q = $db->executeQuery($effect_q);
     $num_q = $db->executeQuery($num_q);
     if($effect_q == "heal"){
-        //$_SESSION['userhp'] = $_SESSION['userhp'] + $num_q
+        $_SESSION['userhp'] = $_SESSION['userhp'] + $num_q;
     }
     else{
-        if($_SESSION['mobhp'] < $num_q){
-            //matar mob
+        if($_SESSION['mobhp'] <= $num_q){
+            nextBattle();
         }
         else{
-            //$_SESSION['mobhp'] = $_SESSION['mobhp'] - $num_q;
+            $_SESSION['mobhp'] = $_SESSION['mobhp'] - $num_q;
         }
     }
 }
@@ -82,7 +75,8 @@ function simulateCombat()
 {
     //generar daño
 
-    if($_SESSION['userhp'] < $_SESSION['mobatk']){
+
+    if($_SESSION['userhp'] <= $_SESSION['mobatk']){
         //matar user / mostrar FIN
     }
     if($_SESSION['mobhp'] < $_SESSION['userpower']){
@@ -110,16 +104,6 @@ function nextBattle()
 
 }
 
-function rest()
-{
-    //guardar avance
-
-}
-
-function rechargeFromRest()
-{
-    //cargar avance
-}
 
 function endGame()
 {
@@ -129,6 +113,11 @@ function endGame()
 }
 
 function generateTxt()
+{
+
+}
+
+function overwrite()
 {
 
 }

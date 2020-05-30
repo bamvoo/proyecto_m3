@@ -21,44 +21,42 @@
 </aside>
 
 <section class="central">
-    <h3>Bienvenido al Calabozo</h3>
+    <h3>Dentro del Calabozo</h3>
     <article>
         <div id="formulario">
 
             <?php
                 include_once '../controllers/GameController.php';
 
-                //mostrar enemigo
-                generateMob();
-
-                //vida      //Ataque
-
-                //bolsa
-
-                //generar ficha
-                //subir ficha
+                if(isset($_POST['attack_btn'])){
+                    simulateCombat();
+                }
 
 
                 echo "
                     <div id='mob_div'>
                         <div>".$_SESSION['mobname']."</div>
-                        <div>".$_SESSION['mobhp']."</div>
+                        <div>HP:".$_SESSION['mobhp']."</div>
                         <div><img src='../public/img/".$_SESSION['mobname']."'></div>
                     </div>
                     <div id='pj_div'>
                         <div>HP:".$_SESSION['userhp']."</div>
-                        <form action=''>
-                            <input type='submit' name='attack_btn' value='Atacar'>
-                        </form>
                     </div>
                     <div id='bag_div'>
                         
                     </div>
-                "
+                ";
+
+
             ?>
-            <form action = "" method="GET">
-                <input type="submit" name="dormir" value="Dormir" id="get_txt" />
+            <form action = "" method="POST">
+                <input type="text" value="atacar" name="atacar">
+                <input type='submit' name='attack_btn' value='Atacar' id='attack_btn'>
+            </form>
+            <form action = "../controllers/" method="GET">
                 <input type="submit" name="gen_txt" value="Generar ficha" id="get_txt" />
+            </form>
+            <form action = "../controllers/" method="GET">
                 <input type="submit" name="update_pj" value="Subir ficha" id="update_pj" />
             </form>
         </div>
