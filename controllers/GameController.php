@@ -132,7 +132,7 @@ function rechargeFromRest()
     //cargar avance
 }
 
-function end()
+function endGame()
 {
     //delete de user
     //borrar sessions

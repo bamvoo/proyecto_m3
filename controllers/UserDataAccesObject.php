@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-include_once 'MySQLAdapter.php';
+include_once '../adapters/MySQLAdapter.php';
 include_once '../models/User.php';
 
 class UserDataAccesObject

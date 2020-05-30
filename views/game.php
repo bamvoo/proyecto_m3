@@ -42,13 +42,13 @@
                 echo "
                     <div id='mob_div'>
                         <div>".$_SESSION['mobname']."</div>
-                        <div>".$_SESSION['mobname']."</div>
+                        <div>".$_SESSION['mobhp']."</div>
                         <div><img src='../public/img/".$_SESSION['mobname']."'></div>
                     </div>
                     <div id='pj_div'>
                         <div>HP:".$_SESSION['userhp']."</div>
-                        <form>
-                            <input type='button' name='attack_btn' value='Atacar'>
+                        <form action=''>
+                            <input type='submit' name='attack_btn' value='Atacar'>
                         </form>
                     </div>
                     <div id='bag_div'>
