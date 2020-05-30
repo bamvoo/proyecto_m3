@@ -87,7 +87,6 @@ function useObject($name_obj)
             //$_SESSION['mobhp'] = $_SESSION['mobhp'] - $num_q;
         }
     }
-
 }
 
 function simulateCombat()
@@ -114,18 +113,11 @@ function simulateCombat()
 
 }
 
-
 function nextBattle()
 {
     //cambiar enemigo
 
     //bajar nivel
-
-}
-
-function levelUp()
-{
-    //subir nivel
 
 }
 

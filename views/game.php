@@ -23,37 +23,39 @@
 <section class="central">
     <h3>Bienvenido al Calabozo</h3>
     <article>
-        <?php
-            include_once '../controllers/GameController.php';
-
-            //mostrar enemigo
-
-            //vida      //Ataque
-
-            //bolsa
-
-            //generar ficha
-            //subir ficha
-
-        ?>
         <div id="formulario">
-            <form action = "" method="GET">
-                <div id="mob_div">
-                    <!-- mostrar enemigo -->
-                    <input type="text" name="mob_name" value="<?php $_SESSION['mobname'] ?>" readonly>
-                    <input type="text" name="mob_life" value="<?php $_SESSION['mobname'] ?>" readonly>
-                    <img src="../public/img/<?php $_SESSION['mobname'] ?>">
-                </div>
-                <div id="pj_div">
-                    <!-- vida -->
-                    HP:<input type="text" name="hp" value="<?php $_SESSION['userhp'] ?>" readonly>
-                    <!-- attack btn-->
-                    <input type="submit" name="attack_btn" value="Atacar">
-                </div>
-                <div id="bag_div">
-                    <!-- juegos -->
-                </div>
 
+            <?php
+                include_once '../controllers/GameController.php';
+
+                //mostrar enemigo
+                generateMob();
+
+                //vida      //Ataque
+
+                //bolsa
+
+                //generar ficha
+                //subir ficha
+
+
+                echo "
+                    <div id='mob_div'>
+                        <div>$_SESSION['mobname']</div>
+                        <input type='text' name='mob_life' value='$_SESSION['mobname']' readonly>
+                        <img src='../public/img/$_SESSION['mobname']'>
+                    </div>
+                    <div id='pj_div'>
+                    <input type="text" name="hp" value="HP:$_SESSION['userhp']" readonly>
+                        <!-- attack btn-->
+                        <input type="submit" name="attack_btn" value="Atacar">
+                    </div>
+                    <div id="bag_div">
+                        <!-- juegos -->
+                    </div>
+                "
+            ?>
+            <form action = "" method="GET">
                 <input type="submit" name="dormir" value="Dormir" id="get_txt" />
                 <input type="submit" name="gen_txt" value="Generar ficha" id="get_txt" />
                 <input type="submit" name="update_pj" value="Subir ficha" id="update_pj" />
