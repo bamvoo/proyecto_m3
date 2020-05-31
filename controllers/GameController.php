@@ -73,28 +73,24 @@ function useObject($name_obj)
 
 function simulateCombat()
 {
-
     //generar daño
-    if($_SESSION['userhp'] <= $_SESSION['mobatk']){
+    if ($_SESSION['userhp'] <= $_SESSION['mobatk']) {
         //matar user / mostrar FIN
         $db = DataBaseConect::getConnection();
-        $del_user = "DELETE FROM players WHERE name =". $_SESSION['username'];
+        $del_user = "DELETE FROM players WHERE name =" . $_SESSION['username'];
 //        var_dump($del_user);
 //        die;
         $db->executeQuery($del_user);
         header('location: ../views/end.php');
     }
-    if($_SESSION['mobhp'] <= $_SESSION['userpower']){
+    if ($_SESSION['mobhp'] <= $_SESSION['userpower']) {
         //matar mob
         $_SESSION['userhp'] = $_SESSION['userhp'] - $_SESSION['mobatk'];
         nextBattle();
-    }
-    else{
+    } else {
         $_SESSION['mobhp'] = $_SESSION['mobhp'] - $_SESSION['userpower'];
         $_SESSION['userhp'] = $_SESSION['userhp'] - $_SESSION['mobatk'];
-
     }
-
 }
 
 function nextBattle()
