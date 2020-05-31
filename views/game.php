@@ -43,6 +43,7 @@
                     </div>
                     <div id='pj_div'>
                         <div>HP:".$_SESSION['userhp']."</div>
+                        <div>Planta:".$_SESSION['userfloor']."</div>
                     </div>
                     <div id='bag_div'>
                         

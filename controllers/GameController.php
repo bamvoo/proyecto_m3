@@ -86,6 +86,9 @@ function simulateCombat()
     if ($_SESSION['mobhp'] <= $_SESSION['userpower']) {
         //matar mob
         $_SESSION['userhp'] = $_SESSION['userhp'] - $_SESSION['mobatk'];
+        if($_SESSION['userfloor'] == 10 and $_SESSION['userhp'] => 1;){
+
+        }
         nextBattle();
     } else {
         $_SESSION['mobhp'] = $_SESSION['mobhp'] - $_SESSION['userpower'];
