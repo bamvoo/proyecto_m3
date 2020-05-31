@@ -31,6 +31,7 @@
 
                 if(isset($_POST['attack_btn'])){
                     simulateCombat();
+
                 }
 
                 generateMob();
@@ -46,7 +47,7 @@
                         <div>Planta:".$_SESSION['userfloor']."</div>
                     </div>
                     <div id='bag_div'>
-                        
+                        <input >
                     </div>
                 ";
 

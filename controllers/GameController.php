@@ -45,7 +45,23 @@ function generateObject()
 //    $_SESSION['obj_effect'] = $datauser[$num_obj]['effect'];
 //    $_SESSION['obj_num'] = $datauser[$num_obj]['num'];
 
-    $name_obj = $datauser[$num_obj]['name'];
+    if(!$_SESSION['obj_num_1']){
+        $_SESSION['obj_num_1'] = $datauser[$num_obj]['name'];
+    }
+    elseif (!$_SESSION['obj_num_2']){
+        $_SESSION['obj_num_2'] = $datauser[$num_obj]['name'];
+    }
+    elseif (!$_SESSION['obj_num_3']){
+        $_SESSION['obj_num_3'] = $datauser[$num_obj]['name'];
+    }
+    elseif (!$_SESSION['obj_num_4']){
+        $_SESSION['obj_num_4'] = $datauser[$num_obj]['name'];
+    }
+    else{
+        
+    }
+
+
 
     //añadir botón con el nombre del objeto en el id = bag_div
     //y hacer que llame a la function useObject
@@ -86,8 +102,8 @@ function simulateCombat()
     if ($_SESSION['mobhp'] <= $_SESSION['userpower']) {
         //matar mob
         $_SESSION['userhp'] = $_SESSION['userhp'] - $_SESSION['mobatk'];
-        if($_SESSION['userfloor'] == 10 and $_SESSION['userhp'] => 1;){
-
+        if($_SESSION['userfloor'] == 10 and $_SESSION['userhp'] >= 1){
+            header('location: ../views/victory.php');
         }
         nextBattle();
     } else {
