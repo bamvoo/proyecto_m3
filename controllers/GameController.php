@@ -45,26 +45,22 @@ function generateObject()
 //    $_SESSION['obj_effect'] = $datauser[$num_obj]['effect'];
 //    $_SESSION['obj_num'] = $datauser[$num_obj]['num'];
 
-    if(!$_SESSION['obj_num_1']){
+    if($_SESSION['obj_num_1'] == "vacio"){
         $_SESSION['obj_num_1'] = $datauser[$num_obj]['name'];
     }
-    elseif (!$_SESSION['obj_num_2']){
+    elseif ($_SESSION['obj_num_2'] == "vacio" and $_SESSION['obj_num_1'] != "vacio"){
         $_SESSION['obj_num_2'] = $datauser[$num_obj]['name'];
     }
-    elseif (!$_SESSION['obj_num_3']){
+    elseif ($_SESSION['obj_num_3'] == "vacio" and $_SESSION['obj_num_2'] != "vacio"){
         $_SESSION['obj_num_3'] = $datauser[$num_obj]['name'];
     }
-    elseif (!$_SESSION['obj_num_4']){
+    elseif ($_SESSION['obj_num_4'] == "vacio" and $_SESSION['obj_num_3'] != "vacio"){
         $_SESSION['obj_num_4'] = $datauser[$num_obj]['name'];
     }
     else{
-        
+        //changeOldObjects()
     }
 
-
-
-    //añadir botón con el nombre del objeto en el id = bag_div
-    //y hacer que llame a la function useObject
 }
 
 function useObject($name_obj)

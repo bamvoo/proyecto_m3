@@ -29,12 +29,19 @@
 
                 include_once '../controllers/GameController.php';
 
+
+                $_SESSION['obj_num_1'] = "vacio" ;
+                $_SESSION['obj_num_2'] = "vacio" ;
+                $_SESSION['obj_num_3'] = "vacio" ;
+                $_SESSION['obj_num_4'] = "vacio" ;
+
                 if(isset($_POST['attack_btn'])){
                     simulateCombat();
-
+                    generateObject();
                 }
 
                 generateMob();
+
 
                 echo "
                     <div id='mob_div'>
@@ -47,7 +54,10 @@
                         <div>Planta:".$_SESSION['userfloor']."</div>
                     </div>
                     <div id='bag_div'>
-                        <input >
+                        <input type='button' name='attack_btn' value='".$_SESSION['obj_num_1']."' id='attack_btn'>
+                        <input type='button' name='attack_btn' value='".$_SESSION['obj_num_2']."' id='attack_btn'>
+                        <input type='button' name='attack_btn' value='".$_SESSION['obj_num_3']."' id='attack_btn'>
+                        <input type='button' name='attack_btn' value='".$_SESSION['obj_num_4']."' id='attack_btn'>
                     </div>
                 ";
 
