@@ -42,24 +42,20 @@ function generateObject()
     $datauser = [];
     $ok = $db->executeQuery($query, $datauser);
     $num_obj = rand(0,3);
-//    $_SESSION['obj_effect'] = $datauser[$num_obj]['effect'];
-//    $_SESSION['obj_num'] = $datauser[$num_obj]['num'];
+    $_SESSION['obj_effect'] = $datauser[$num_obj]['effect'];
+    $_SESSION['obj_num'] = $datauser[$num_obj]['num'];
 
     if($_SESSION['obj_num_1'] == "vacio"){
         $_SESSION['obj_num_1'] = $datauser[$num_obj]['name'];
-        return $_SESSION['obj_num_1'];
     }
-    elseif ($_SESSION['obj_num_2'] == "vacio" and $_SESSION['obj_num_1'] != "vacio"){
+    elseif ($_SESSION['obj_num_2'] == "vacio" && $_SESSION['obj_num_1'] != "vacio"){
         $_SESSION['obj_num_2'] = $datauser[$num_obj]['name'];
-        return $_SESSION['obj_num_2'];
     }
-    elseif ($_SESSION['obj_num_3'] == "vacio" and $_SESSION['obj_num_2'] != "vacio"){
+    elseif ($_SESSION['obj_num_3'] == "vacio" && $_SESSION['obj_num_2'] != "vacio"){
         $_SESSION['obj_num_3'] = $datauser[$num_obj]['name'];
-        return $_SESSION['obj_num_3'];
     }
-    elseif ($_SESSION['obj_num_4'] == "vacio" and $_SESSION['obj_num_3'] != "vacio"){
+    elseif ($_SESSION['obj_num_4'] == "vacio" && $_SESSION['obj_num_3'] != "vacio"){
         $_SESSION['obj_num_4'] = $datauser[$num_obj]['name'];
-        return $_SESSION['obj_num_4'];
     }
     else{
         //changeOldObjects()
