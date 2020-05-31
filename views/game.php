@@ -29,11 +29,13 @@
 
                 include_once '../controllers/GameController.php';
 
-
-                $_SESSION['obj_num_1'] = "vacio" ;
-                $_SESSION['obj_num_2'] = "vacio" ;
-                $_SESSION['obj_num_3'] = "vacio" ;
-                $_SESSION['obj_num_4'] = "vacio" ;
+                $flag = true;
+                if($flag){
+                    $_SESSION['obj_num_1'] = "vacio" ;
+                    $_SESSION['obj_num_2'] = "vacio" ;
+                    $_SESSION['obj_num_3'] = "vacio" ;
+                    $_SESSION['obj_num_4'] = "vacio" ;
+                }
 
                 if(isset($_POST['attack_btn'])){
                     simulateCombat();
@@ -60,7 +62,7 @@
                         <input type='button' name='attack_btn' value='".$_SESSION['obj_num_4']."' id='attack_btn'>
                     </div>
                 ";
-
+                $flag = false;
 
             ?>
             <form action = "" method="POST">
