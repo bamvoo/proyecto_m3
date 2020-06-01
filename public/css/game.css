@@ -1,0 +1,16 @@
+#body_grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+.leftside{
+
+}
+.rightside{
+
+}
+#caja_grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+}

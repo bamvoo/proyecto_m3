@@ -22,8 +22,10 @@
         <section id="central">
             <article>
                 <div>
-                    <h3>HAS MUERTO</h3>
+                    <h3>HAS MUERTO QUE MALO ERES, QUIERES INTENTARLO OTRA VEZ? </h3>
+                    <input type="button" name="btn1" onclick="location.href='../../ProyectoM3/index.html'"; value="Adentrarse al calabozo" >
                 </div>
+
                 <?php
 
                 ?>
