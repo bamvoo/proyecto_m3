@@ -29,17 +29,16 @@
 
                 include_once '../controllers/GameController.php';
 
-                $flag = true;
-                if($flag){
-                    $_SESSION['obj_num_1'] = "vacio" ;
-                    $_SESSION['obj_num_2'] = "vacio" ;
-                    $_SESSION['obj_num_3'] = "vacio" ;
-                    $_SESSION['obj_num_4'] = "vacio" ;
+
+                if(!isset($_SESSION['obj_name_1'])){
+                    $_SESSION['obj_name_1'] = "vacio" ;
+                    $_SESSION['obj_name_2'] = "vacio" ;
+                    $_SESSION['obj_name_3'] = "vacio" ;
+                    $_SESSION['obj_name_4'] = "vacio" ;
                 }
 
                 if(isset($_POST['attack_btn'])){
                     simulateCombat();
-                    generateObject();
                 }
 
                 generateMob();
@@ -56,13 +55,12 @@
                         <div>Planta:".$_SESSION['userfloor']."</div>
                     </div>
                     <div id='bag_div'>
-                        <input type='button' name='attack_btn' value='".$_SESSION['obj_num_1']."' id='attack_btn'>
-                        <input type='button' name='attack_btn' value='".$_SESSION['obj_num_2']."' id='attack_btn'>
-                        <input type='button' name='attack_btn' value='".$_SESSION['obj_num_3']."' id='attack_btn'>
-                        <input type='button' name='attack_btn' value='".$_SESSION['obj_num_4']."' id='attack_btn'>
+                        <input type='button' name='obj_btn_1' value='".$_SESSION['obj_name_1']."' id='attack_btn'>
+                        <input type='button' name='obt_btn_2' value='".$_SESSION['obj_name_2']."' id='attack_btn'>
+                        <input type='button' name='obt_btn_3' value='".$_SESSION['obj_name_3']."' id='attack_btn'>
+                        <input type='button' name='obt_btn_4' value='".$_SESSION['obj_name_4']."' id='attack_btn'>
                     </div>
                 ";
-                $flag = false;
 
             ?>
             <form action = "" method="POST">
