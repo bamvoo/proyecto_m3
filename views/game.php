@@ -81,9 +81,9 @@
             ?>
             <form action = "" method="POST">
                 <input type='submit' name='obj_btn_1' value='objeto 1' id='obj_btn_1'>
-                <input type='submit' name='obt_btn_2' value='objeto 2' id='obj_btn_2'>
-                <input type='submit' name='obt_btn_3' value='objeto 3' id='obj_btn_3'>
-                <input type='submit' name='obt_btn_4' value='objeto 4' id='obj_btn_4'>
+                <input type='submit' name='obj_btn_2' value='objeto 2' id='obj_btn_2'>
+                <input type='submit' name='obj_btn_3' value='objeto 3' id='obj_btn_3'>
+                <input type='submit' name='obj_btn_4' value='objeto 4' id='obj_btn_4'>
             </form>
 
             <form action = "" method="POST">

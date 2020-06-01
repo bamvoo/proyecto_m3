@@ -26,12 +26,6 @@
                 </div>
                 <?php
 
-//                    $username = filter_input(INPUT_COOKIE, 'username');
-//                    $level = filter_input(INPUT_COOKIE, 'userlevel');
-//                    $points = filter_input(INPUT_COOKIE, 'userpoints');
-//                    print "<h3>Usuari: $username </h3>";
-//                    print "Nivell: $level";
-//                    print "<br><br>Punts: ".(int)$points."<br><br>";
                 ?>
             </article>
         </section>

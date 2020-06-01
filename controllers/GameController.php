@@ -75,7 +75,6 @@ function useObject($name_obj, $var)
     $effect_q = $datauser4[0]['effect'];
     $num_q = $datauser4[0]['num'];
 
-    var_dump($effect_q);
     if($effect_q == "heal"){
         $_SESSION['userhp'] = $_SESSION['userhp'] + $num_q;
     }
@@ -87,8 +86,11 @@ function useObject($name_obj, $var)
             $_SESSION['mobhp'] = $_SESSION['mobhp'] - $num_q;
         }
     }
-
-    $_SESSION['obj_name_'.$var.''] = "vacio";
+    $name = "obj_name_".$var;
+    var_dump($name);
+    $_SESSION[''.$name.''] = "vacio";
+    var_dump($_SESSION[''.$name.'']);
+    var_dump($_SESSION['obj_name_2']);
 
 
 }
@@ -100,8 +102,6 @@ function simulateCombat()
         //matar user / mostrar FIN
         $db = DataBaseConect::getConnection();
         $del_user = "DELETE FROM players WHERE name =" . $_SESSION['username'];
-//        var_dump($del_user);
-//        die;
         $db->executeQuery($del_user);
         header('location: ../views/end.php');
     }
@@ -109,6 +109,9 @@ function simulateCombat()
         //matar mob
         $_SESSION['userhp'] = $_SESSION['userhp'] - $_SESSION['mobatk'];
         if($_SESSION['userfloor'] == 10 and $_SESSION['userhp'] >= 1){
+            $db = DataBaseConect::getConnection();
+            $win = "INSERT INTO winners (name) VALUES ('" . $_SESSION['username'] . "')";
+            $db->executeQuery($win);
             header('location: ../views/victory.php');
         }
         nextBattle();
