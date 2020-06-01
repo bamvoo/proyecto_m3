@@ -110,7 +110,7 @@
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
             <div id="p2" class="message rpgui-container framed-golden medio rpgui-cursor-point">
-                <p>Recuerdas quien eres?</p>
+                <p>Recuerdas quién eres?</p>
                 <input type="button" value="SI" name="si_btn" id="si_btn">
                 <input type="button" value="NO" name="no_btn" id="no_btn">
             </div>

@@ -121,26 +121,23 @@ function nextBattle()
 
     //bajar nivel
     $_SESSION['userfloor'] = $_SESSION['userfloor'] + 1;
-
-    //actualiza la planta
-    updatePlanta();
+    $planta = $_SESSION['userfloor'];
+    $user = $_SESSION['username'];
+    $db = DataBaseConect::getConnection();
+    $upd_user = "UPDATE players SET floor=".$planta." WHERE name='".$user."'";
+    $db->executeQuery($upd_user);
 
     //obtener obj
     generateObject();
 
-
-}
-function updatePlanta(){
-    $db = DataBaseConect::getConnection();
-    $upd_user = "UPDATE players SET floor=".$_SESSION['userfloor']." WHERE name=".$_SESSION['username'];
-    $this->db->executeQuery($upd_user);
 }
 
 
 function endGame()
 {
+    $user = $_SESSION['username'];
     $db = DataBaseConect::getConnection();
-    $del_user = "DELETE FROM players WHERE name =" . $_SESSION['username'];
+    $del_user = "DELETE FROM players WHERE name ='" . $user . "'";
     $db->executeQuery($del_user);
 
     session_destroy();
@@ -148,12 +145,12 @@ function endGame()
     header('location: ../views/end.php');
 }
 
-function generateTxt()
-{
-
-}
-
-function overwrite()
-{
-
-}
+//function generateTxt()
+//{
+//
+//}
+//
+//function overwrite()
+//{
+//
+//}
