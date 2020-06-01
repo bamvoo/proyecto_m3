@@ -120,15 +120,20 @@ function nextBattle()
     generateMob();
 
     //bajar nivel
-    $db = DataBaseConect::getConnection();
     $_SESSION['userfloor'] = $_SESSION['userfloor'] + 1;
-    $upd_user = "UPDATE players SET floor=".$_SESSION['userfloor']." WHERE name=".$_SESSION['username'];
-    $db->executeQuery($upd_user);
+
+    //actualiza la planta
+    updatePlanta();
 
     //obtener obj
     generateObject();
 
 
+}
+function updatePlanta(){
+    $db = DataBaseConect::getConnection();
+    $upd_user = "UPDATE players SET floor=".$_SESSION['userfloor']." WHERE name=".$_SESSION['username'];
+    $this->db->executeQuery($upd_user);
 }
 
 

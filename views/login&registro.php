@@ -179,7 +179,7 @@
                     <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
                 <div class="message rpgui-container framed-golden medio rpgui-cursor-point" id="p5l">
-                    <p>Ahhhh! Ya te recuerdo si... Te quedaste dormido no? A que esperas? Despierta!</p>
+                    <p>Si me has dicho la verdad despertarás en dónde lo dejaste, si es mentira afronta las consequencias...</p>
                     <input type="submit" class="next_btn" name="next" value="Despertar" onclick="$(location).attr('href','../views/game.php')">
                 </div>
             </form>

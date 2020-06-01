@@ -62,11 +62,11 @@ if ($usuari_l) {
     $query = "SELECT name, password, level, hp, class, state, floor, power FROM players WHERE name = '" . $usuari_l . "'";
     $ok = $db->executeQuery($query, $datauser);
 
-    if($ok){
+    if($ok and $password_l == $datauser[0]['password']){
 
-        $_SESSION['username'] = $usuari_l;
+        $_SESSION['username'] = $datauser[0]['name'];
         $_SESSION['userlevel'] = $datauser[0]['level'];
-        $_SESSION['userpasswd'] = $password_l;
+        $_SESSION['userpasswd'] = $datauser[0]['password'];
         $_SESSION['userhp'] = $datauser[0]['hp'];
         $_SESSION['userclass'] = $datauser[0]['class'];
         $_SESSION['userstate'] = $datauser[0]['state'];
@@ -76,6 +76,6 @@ if ($usuari_l) {
         header('location: ../views/game.php');
     }
     else{
-        header('location: login&registro.php');
+        header('location: ../index.html');
     }
 }

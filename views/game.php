@@ -16,6 +16,7 @@
                 <div id="caja_grid_inside">
                     <?php
                         include_once '../controllers/GameController.php';
+                        include_once '../adapters/DataBaseConect.php';
 
                         if(!isset($_SESSION['obj_name_1'])){
                             generateMob();
