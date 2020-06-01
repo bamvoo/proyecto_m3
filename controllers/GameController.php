@@ -46,19 +46,21 @@ function generateObject()
     $_SESSION['obj_num'] = $datauser[$num_obj]['num'];
 
     $flag = false;
+    $flag2 = false;
     if($_SESSION['obj_num_1'] == "vacio"){
         $_SESSION['obj_num_1'] = $datauser[$num_obj]['name'];
         $flag = true;
+        $flag2 = true;
     }
-    if ($_SESSION['obj_num_2'] == "vacio" and $_SESSION['obj_num_1'] != "vacio" and $flag == false){
+    if ($_SESSION['obj_num_2'] == "vacio" and $flag2 != true){
         $_SESSION['obj_num_2'] = $datauser[$num_obj]['name'];
         $flag = true;
     }
-    if ($_SESSION['obj_num_3'] == "vacio" and $_SESSION['obj_num_2'] != "vacio" and $flag == false){
+    if ($_SESSION['obj_num_3'] == "vacio" and $flag == false){
         $_SESSION['obj_num_3'] = $datauser[$num_obj]['name'];
         $flag = true;
     }
-    if ($_SESSION['obj_num_4'] == "vacio" and $_SESSION['obj_num_3'] != "vacio" and $flag == false){
+    if ($_SESSION['obj_num_4'] == "vacio" and $flag == false){
         $_SESSION['obj_num_4'] = $datauser[$num_obj]['name'];
         $flag = true;
     }
