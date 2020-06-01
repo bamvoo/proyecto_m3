@@ -65,22 +65,31 @@
                         <div>Planta:".$_SESSION['userfloor']."</div>
                     </div>
                     <div id='bag_div'>
-                         <form action = \"\" method=\"POST\">
-                            <input type='submit' name='obj_btn_1' value='".$_SESSION['obj_name_1']."' id='obj_name_1'>
-                            <input type='submit' name='obt_btn_2' value='".$_SESSION['obj_name_2']."' id='obj_name_2'>
-                            <input type='submit' name='obt_btn_3' value='".$_SESSION['obj_name_3']."' id='obj_name_3'>
-                            <input type='submit' name='obt_btn_4' value='".$_SESSION['obj_name_4']."' id='obj_name_4'>
-                        </form>
+                        <form>
+                            <input type='text' name='obj_btn_1_t' value='".$_SESSION['obj_name_1']."' disabled>
+                            <input type='text' name='obt_btn_2_t' value='".$_SESSION['obj_name_2']."' disabled>
+                            <input type='text' name='obt_btn_3_t' value='".$_SESSION['obj_name_3']."' disabled>
+                            <input type='text' name='obt_btn_4_t' value='".$_SESSION['obj_name_4']."' disabled>
+                        </form>    
                     </div>
                 ";
 
             ?>
             <form action = "" method="POST">
+                <input type='submit' name='obj_btn_1' value='objeto 1' id='obj_name_1'>
+                <input type='submit' name='obt_btn_2' value='objeto 2' id='obj_name_2'>
+                <input type='submit' name='obt_btn_3' value='objeto 3' id='obj_name_3'>
+                <input type='submit' name='obt_btn_4' value='objeto 4' id='obj_name_4'>
+            </form>
+
+            <form action = "" method="POST">
                 <input type='submit' name='attack_btn' value='Atacar' id='attack_btn'>
             </form>
+
             <form action = "../controllers/" method="GET">
                 <input type="submit" name="gen_txt" value="Generar ficha" id="get_txt" />
             </form>
+
             <form action = "../controllers/" method="GET">
                 <input type="submit" name="update_pj" value="Subir ficha" id="update_pj" />
             </form>
