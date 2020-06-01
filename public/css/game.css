@@ -50,11 +50,14 @@
 
 .bto{
     height: 9vh;
-    width: 50vw!important;
-    margin-top: 10vh!important;
+    width: 25vw!important;
 }
 
 #botones{
     grid-row: 3/4;
     grid-column: 1/1;
+}
+
+body{
+    background-image:url("../img/fondo.jpg");
 }

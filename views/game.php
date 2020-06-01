@@ -71,14 +71,14 @@
                 </div>
                 <div id='botones'>
                         <form action = "" method="POST">
-                            <input type='submit' name='obj_btn_1' value='objeto 1' id='obj_btn_1' class=" rpgui-container framed-golden rpgui-cursor-point bto">
-                            <input type='submit' name='obj_btn_2' value='objeto 2' id='obj_btn_2' class=" rpgui-container framed-golden rpgui-cursor-point bto">
-                            <input type='submit' name='obj_btn_3' value='objeto 3' id='obj_btn_3' class=" rpgui-container framed-golden rpgui-cursor-point bto">
-                            <input type='submit' name='obj_btn_4' value='objeto 4' id='obj_btn_4' class=" rpgui-container framed-golden rpgui-cursor-point bto">
+                            <input type='submit' name='obj_btn_1' value='objeto 1' id='obj_btn_1' class=" rpgui-container framed-golden rpgui-cursor-point bto" style="">
+                            <input type='submit' name='obj_btn_2' value='objeto 2' id='obj_btn_2' class=" rpgui-container framed-golden rpgui-cursor-point bto" style="margin-left: 25vw;">
+                            <input type='submit' name='obj_btn_3' value='objeto 3' id='obj_btn_3' class=" rpgui-container framed-golden rpgui-cursor-point bto" style="margin-top: 9vh;">
+                            <input type='submit' name='obj_btn_4' value='objeto 4' id='obj_btn_4' class=" rpgui-container framed-golden rpgui-cursor-point bto" style="margin-top: 9vh; margin-left: 25vw;">
                         </form>
 
                         <form action = "" method="POST">
-                            <input type='submit' name='attack_btn' value='Atacar' id='attack_btn' class=" rpgui-cursor-point">
+                            <input type='submit' name='attack_btn' value='Atacar' id='attack_btn' class=" rpgui-cursor-point" style="margin-top: 18.5vh;">
                         </form>
 
                         <form action = "../controllers/" method="GET">

@@ -3,15 +3,6 @@
     display:none;
 }
 
-.top{
-
-}
-.leftside{
-
-}
-.rightside{
-
-}
-.bottom{
-
+body{
+    background-image:url("../img/fondo.jpg");
 }
