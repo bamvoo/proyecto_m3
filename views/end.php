@@ -23,7 +23,7 @@
             <article>
                 <div>
                     <h3>HAS MUERTO QUE MALO ERES, QUIERES INTENTARLO OTRA VEZ? </h3>
-                    <input type="button" name="btn1" onclick="location.href='../../ProyectoM3/index.html'"; value="Adentrarse al calabozo" >
+                    <input type="button" name="btn1" onclick="location.href='../../ProyectoM3/index.html'"; value="Volver atrás" >
                 </div>
 
                 <?php

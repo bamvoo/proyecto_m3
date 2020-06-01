@@ -24,7 +24,8 @@
 }
 
 #title_div{
-    width: 100%;
+    margin-top: 2vh;
+    width: 50vw;
 }
 
 #caja_grid_inside{
@@ -45,9 +46,13 @@
 #pj_div{
     margin-top: 33.5vh;
     width: 50vw;
-
 }
 
+.bto{
+    height: 9vh;
+    width: 50vw!important;
+    margin-top: 10vh!important;
+}
 
 #botones{
     grid-row: 3/4;

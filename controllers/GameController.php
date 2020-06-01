@@ -87,10 +87,7 @@ function useObject($name_obj, $var)
         }
     }
     $name = "obj_name_".$var;
-    var_dump($name);
     $_SESSION[''.$name.''] = "vacio";
-    var_dump($_SESSION[''.$name.'']);
-    var_dump($_SESSION['obj_name_2']);
 
 
 }

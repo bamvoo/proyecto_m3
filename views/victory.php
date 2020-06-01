@@ -23,6 +23,8 @@
     <article>
         <div>
             <h3>HAS LLEGADO CON VIDA AL EXTERIOR! FELICIDADES!</h3>
+            <p>Muy pocos han conseguidos salir vivos de esta trampa mortal, serás recordado por la eternidad.</p>
+            <input type="button" name="btn1" onclick="location.href='../../ProyectoM3/index.html'"; value="Voler atrás" >
         </div>
         <?php
 
