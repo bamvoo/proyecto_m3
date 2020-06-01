@@ -4,7 +4,9 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="title" content="Portal del Modul 3">
-        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="../public/css/RonenNess-RPGUI-062bee8/dist/rpgui.css" rel="stylesheet" type="text/css"/>
+        <script src="../public/css/RonenNess-RPGUI-062bee8/dist/rpgui.js"></script>
+        <link href="../public/css/l&r.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>

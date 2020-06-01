@@ -6,3 +6,10 @@
 body{
     background-image:url("../img/fondo.jpg");
 }
+.grid_body{
+    display: grid;
+    
+}
+.medio{
+
+}
