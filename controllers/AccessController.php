@@ -25,18 +25,18 @@ if ($usuari_r) {
     $floor = 1;
     $state = "none";
 
-    if($class == "warrior"){
-        $hp = 20 ;
-        $power = 6;
-    }
-    elseif($class == "thief"){
-        $hp = 15 ;
-        $power = 4;
-    }
-    else{
-        $hp = 12;
-        $power = 10;
-    }
+//    if($class == "warrior"){
+    $hp = 20 ;
+    $power = 6;
+//    }
+//    elseif($class == "thief"){
+//        $hp = 15 ;
+//        $power = 4;
+//    }
+//    else{
+//        $hp = 12;
+//        $power = 10;
+//    }
 
     $query = "INSERT INTO players (name, password, level, hp, class, state, floor, power) VALUES ('" . $usuari_r . "','" . $password_r . "','" . $level . "','" . $hp . "','" . $class . "','" . $state . "','" . $floor . "','" . $power . "')";
     $ok = $db->executeQuery($query);
