@@ -7,12 +7,10 @@ body{
     background-image:url("../img/fondo.jpg");
 }
 .grid_body{
-    display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
-    grid-template-columns: 1fr 2fr 1fr;
-
+    width: 100vw;
+    height: 100vh;
 }
 .medio{
-    grid-row: 2/3;
-    grid-column: 2/3;
+    margin-top: 37vh;
+    margin-left: 30vw;
 }
