@@ -65,8 +65,9 @@ function generateObject()
 
 }
 
-function useObject($name_obj)
+function useObject($name_obj, $var)
 {
+
     $db = DataBaseConect::getConnection();
     $query = "SELECT name, effect, num FROM objects WHERE name = '". $name_obj ."'";
     $datauser4 = [];
@@ -86,6 +87,10 @@ function useObject($name_obj)
             $_SESSION['mobhp'] = $_SESSION['mobhp'] - $num_q;
         }
     }
+
+    $_SESSION['obj_name_'.$var.''] = "vacio";
+
+
 }
 
 function simulateCombat()

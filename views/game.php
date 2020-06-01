@@ -42,16 +42,20 @@
                     simulateCombat();
                 }
                 if(isset($_POST['obj_btn_1'])){
-                    useObject($_SESSION['obj_name_1']);
+                    $var = 1;
+                    useObject($_SESSION['obj_name_1'], $var);
                 }
                 if(isset($_POST['obj_btn_2'])){
-                    useObject($_SESSION['obj_name_2']);
+                    $var = 2;
+                    useObject($_SESSION['obj_name_2'], $var);
                 }
                 if(isset($_POST['obj_btn_3'])){
-                    useObject($_SESSION['obj_name_3']);
+                    $var = 3;
+                    useObject($_SESSION['obj_name_3'], $var);
                 }
                 if(isset($_POST['obj_btn_4'])){
-                    useObject($_SESSION['obj_name_4']);
+                    $var = 4;
+                    useObject($_SESSION['obj_name_4'], $var);
                 }
 
                 echo "
