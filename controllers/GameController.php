@@ -68,10 +68,11 @@ function generateObject()
 function useObject($name_obj)
 {
     $db = DataBaseConect::getConnection();
-    $effect_q = "SELECT effect FROM objects WHERE name =". $name_obj;
-    $num_q = "SELECT num FROM objects WHERE name =". $name_obj;
-    $effect_q = $db->executeQuery($effect_q);
-    $num_q = $db->executeQuery($num_q);
+    $query = "SELECT name, effect, num FROM objects WHERE name = '". $name_obj ."'";
+    $datauser4 = [];
+    $db->executeQuery($query, $datauser4);
+    $effect_q = $datauser4[0]['effect'];
+    $num_q = $datauser4[0]['num'];
 
     var_dump($effect_q);
     if($effect_q == "heal"){
