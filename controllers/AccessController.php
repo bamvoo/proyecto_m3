@@ -56,18 +56,13 @@ if ($usuari_r) {
     }
 }
 
-$datauser = [];
-$datauser2 = [];
-
 if ($usuari_l) {
 
+    $datauser = [];
     $query = "SELECT name, password, level, hp, class, state, floor, power FROM players WHERE name = '" . $usuari_l . "'";
-    $ok = $db->executeQuery($query, $datauser2);
+    $ok = $db->executeQuery($query, $datauser);
 
     if($ok){
-
-        $query = "SELECT name, password, level, hp, class, state, floor, power FROM players WHERE name = '" . $usuari_l . "'";
-        $ok = $db->executeQuery($query, $datauser);
 
         $_SESSION['username'] = $usuari_l;
         $_SESSION['userlevel'] = $datauser[0]['level'];

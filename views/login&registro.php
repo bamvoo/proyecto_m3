@@ -109,7 +109,7 @@
                 <p>Tu consciencia está volviendo a tí</p>
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>
-            <div id="p2" class="message rpgui-container framed-golden medio">
+            <div id="p2" class="message rpgui-container framed-golden medio rpgui-cursor-point">
                 <p>Recuerdas quien eres?</p>
                 <input type="button" value="SI" name="si_btn" id="si_btn">
                 <input type="button" value="NO" name="no_btn" id="no_btn">
@@ -118,26 +118,26 @@
 
             <!--------------REGISTER------------------>
             <form action="../controllers/AccessController.php" method="POST">
-                <div class="message rpgui-container framed-golden medio" id="p3r">
+                <div class="message rpgui-container framed-golden medio rpgui-cursor-point" id="p3r">
                     <p>Intenta recordar anda...</p>
                         <input type="text"  id="new_user"  name="name_user_register" >
                         <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
 
-                <div class="message rpgui-container framed-golden medio" id="p4r">
+                <div class="message rpgui-container framed-golden medio rpgui-cursor-point" id="p4r">
                     <p>Te llamas <span id="name"></span>
                         ? No es el mejor de los nombres...
                     </p>
                     <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
 
-                <div class="message rpgui-container framed-golden medio" id="p5r">
+                <div class="message rpgui-container framed-golden medio rpgui-cursor-point" id="p5r">
                     <p>Siento decirte que has caído en un lugar muy peligroso
                         y la única forma de salir es avanzando sin mirar atrás</p>
                     <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
 
-                <div class="message rpgui-container framed-golden medio" id="p6r">
+                <div class="message rpgui-container framed-golden medio rpgui-cursor-point" id="p6r">
                     <p>Hay muchas cosas aquí abajo y soy horrible con los
                         nombres, así que piensa en algún código con el que saber que eres tu por si acaso</p>
                     <input type="password" id="new_passw" name="passw_user_register" >
@@ -168,17 +168,17 @@
             </form>
             <!----------------LOGIN-------------------->
             <form action="../controllers/AccessController.php" method="POST">
-                <div class="message medio" id="p3l">
+                <div class="message rpgui-container framed-golden medio" id="p3l">
                     <p>Pues yo no la verdad ¿Cómo te llamabas?</p>
-                    <input type="text rpgui-container framed-golden medio" name="name_user_login" id="name_l">
+                    <input type="text rpgui-container framed-golden medio rpgui-cursor-point" name="name_user_login" id="name_l">
                     <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
-                <div class="message rpgui-container framed-golden medio" id="p4l">
+                <div class="message rpgui-container framed-golden medio rpgui-cursor-point" id="p4l">
                     <p>Ese nombre me suena... No hicimos algo como un código por si me olvidaba de ti?</p>
                     <input type="password" name="passw_user_login">
                     <input type="button" class="next_btn" name="next" value="Siguiente">
                 </div>
-                <div class="message rpgui-container framed-golden medio" id="p5l">
+                <div class="message rpgui-container framed-golden medio rpgui-cursor-point" id="p5l">
                     <p>Ahhhh! Ya te recuerdo si... Te quedaste dormido no? A que esperas? Despierta!</p>
                     <input type="submit" class="next_btn" name="next" value="Despertar" onclick="$(location).attr('href','../views/game.php')">
                 </div>
