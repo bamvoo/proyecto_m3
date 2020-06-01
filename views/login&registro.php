@@ -160,17 +160,17 @@
                     <div id="warrior">
                         <img src="">
                         <p> Un valeroso guerrero con mucha vitalidad </p>
-                        <input type="radio" class="next_btn" name="clases" value="warrior">
+                        <input type="radio" class="next_btn " name="clases" value="warrior">
                     </div>
                     <div id="wizard">
                         <img src="">
                         <p> Un poderoso e intelectual mago </p>
-                        <input type="radio" class="next_btn" name="clases" value="wizard">
+                        <input type="radio" class="next_btn " name="clases" value="wizard">
                     </div>
                     <div id="thief">
                         <img src="">
                         <p> Un escurridizo y hábil ladrón </p>
-                        <input type="radio" class="next_btn" name="clases" value="thief">
+                        <input type="radio" class="next_btn " name="clases" value="thief">
                     </div>
                     <div>
                         <input type="submit" class="next_btn" name="next" value="Comenzar">
