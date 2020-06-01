@@ -45,17 +45,22 @@ function generateObject()
     $_SESSION['obj_effect'] = $datauser[$num_obj]['effect'];
     $_SESSION['obj_num'] = $datauser[$num_obj]['num'];
 
+    $flag = false;
     if($_SESSION['obj_num_1'] == "vacio"){
         $_SESSION['obj_num_1'] = $datauser[$num_obj]['name'];
+        $flag = true;
     }
-    elseif ($_SESSION['obj_num_2'] == "vacio" && $_SESSION['obj_num_1'] != "vacio"){
+    if ($_SESSION['obj_num_2'] == "vacio" and $_SESSION['obj_num_1'] != "vacio" and $flag == false){
         $_SESSION['obj_num_2'] = $datauser[$num_obj]['name'];
+        $flag = true;
     }
-    elseif ($_SESSION['obj_num_3'] == "vacio" && $_SESSION['obj_num_2'] != "vacio"){
+    if ($_SESSION['obj_num_3'] == "vacio" and $_SESSION['obj_num_2'] != "vacio" and $flag == false){
         $_SESSION['obj_num_3'] = $datauser[$num_obj]['name'];
+        $flag = true;
     }
-    elseif ($_SESSION['obj_num_4'] == "vacio" && $_SESSION['obj_num_3'] != "vacio"){
+    if ($_SESSION['obj_num_4'] == "vacio" and $_SESSION['obj_num_3'] != "vacio" and $flag == false){
         $_SESSION['obj_num_4'] = $datauser[$num_obj]['name'];
+        $flag = true;
     }
     else{
         //changeOldObjects()
