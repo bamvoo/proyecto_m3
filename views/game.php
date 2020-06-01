@@ -4,8 +4,8 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="title" content="Portal del Modul 3">
-    <!--    <link href="/public/css/RonenNess-RPGUI-062bee8/dist/rpgui.css" rel="stylesheet" type="text/css"/>-->
-    <!--    <script src="/public/css/RonenNess-RPGUI-062bee8/dist/rpgui.js"></script>-->
+    <link href="../public/css/RonenNess-RPGUI-062bee8/dist/rpgui.css" rel="stylesheet" type="text/css"/>
+    <script src="../public/css/RonenNess-RPGUI-062bee8/dist/rpgui.js"></script>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 
 </aside>
 
-<section class="central">
+<section class="central rpgui-content">
     <h3>Dentro del Calabozo</h3>
     <article>
         <div id="formulario">
@@ -59,10 +59,11 @@
                 }
 
                 echo "
-                    <div id='mob_div'>
+
+                    <div id='mob_div' class='rpgui-container framed'>
                         <div>".$_SESSION['mobname']."</div>
                         <div>HP:".$_SESSION['mobhp']."</div>
-                        <div><img src='../public/img/".$_SESSION['mobname']."'></div>
+                        <div><img src='../public/img/".$_SESSION['mobname'].".jpg'></div>
                     </div>
                     <div id='pj_div'>
                         <div>HP:".$_SESSION['userhp']."</div>

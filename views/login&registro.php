@@ -8,6 +8,9 @@
         <!--    <script src="/public/css/RonenNess-RPGUI-062bee8/dist/rpgui.js"></script>-->
         <link href="../public/css/l&r.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="../public/css/RonenNess-RPGUI-062bee8/dist/rpgui.css" rel="stylesheet" type="text/css"/>
+        <script src="../public/css/RonenNess-RPGUI-062bee8/dist/rpgui.js"></script>
+
         <script>
             $(document).ready(function(){
                 // $("#p1") .show(); .hide();
@@ -112,8 +115,8 @@
 
         </aside>
 
-        <section class="central">
-            <div id="p1">
+        <section class="central rpgui-content">
+            <div id="p1" class="rpgui-container framed-golden">ff
                 <p>Tu consciencia está volviendo a tí</p>
                 <input type="button" class="next_btn" name="next" value="Siguiente">
             </div>

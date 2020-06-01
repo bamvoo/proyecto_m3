@@ -99,11 +99,7 @@ function simulateCombat()
 {
     //generar daño
     if ($_SESSION['userhp'] <= $_SESSION['mobatk']) {
-        //matar user / mostrar FIN
-        $db = DataBaseConect::getConnection();
-        $del_user = "DELETE FROM players WHERE name =" . $_SESSION['username'];
-        $db->executeQuery($del_user);
-        header('location: ../views/end.php');
+        endGame();
     }
     if ($_SESSION['mobhp'] <= $_SESSION['userpower']) {
         //matar mob
@@ -141,9 +137,13 @@ function nextBattle()
 
 function endGame()
 {
-    //delete de user
-    //borrar sessions
-    //mostrar pantalla de FIN
+    $db = DataBaseConect::getConnection();
+    $del_user = "DELETE FROM players WHERE name =" . $_SESSION['username'];
+    $db->executeQuery($del_user);
+
+    session_destroy();
+
+    header('location: ../views/end.php');
 }
 
 function generateTxt()
