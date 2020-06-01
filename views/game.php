@@ -13,6 +13,7 @@
     <div id="body_grid" class="rpgui-content">
             <article id="caja_grid">
                 <div id="title_div"><h3>Dentro del Calabozo</h3></div>
+                <div id="caja_grid_inside">
                     <?php
                         include_once '../controllers/GameController.php';
 
@@ -51,10 +52,6 @@
                                 <div>HP:".$_SESSION['mobhp']."</div>
                                 <div><img src='../public/img/".$_SESSION['mobname'].".jpg'></div>
                             </div>
-                            <div id='pj_div' class='rpgui-container framed-golden'>
-                                <div>HP:".$_SESSION['userhp']."</div>
-                                <div>Planta:".$_SESSION['userfloor']."</div>
-                            </div>
                             <div id='bag_div' class='rpgui-container framed-golden'>
                                 <form>
                                     <input type='text' name='obj_btn_1_t' value='".$_SESSION['obj_name_1']."' disabled>
@@ -63,29 +60,35 @@
                                     <input type='text' name='obt_btn_4_t' value='".$_SESSION['obj_name_4']."' disabled>
                                 </form>    
                             </div>
+                            <div id='pj_div' class='rpgui-container framed-golden'>
+                                <div>HP:".$_SESSION['userhp']."</div>
+                                <div>Planta:".$_SESSION['userfloor']."</div>
+                            </div>
+
                         ";
 
                     ?>
-                    <div id='botones'>
+                </div>
+                <div id='botones'>
                         <form action = "" method="POST">
-                            <input type='submit' name='obj_btn_1' value='objeto 1' id='obj_btn_1' class="rpgui-button">
-                            <input type='submit' name='obj_btn_2' value='objeto 2' id='obj_btn_2' class="rpgui-button">
-                            <input type='submit' name='obj_btn_3' value='objeto 3' id='obj_btn_3' class="rpgui-button">
-                            <input type='submit' name='obj_btn_4' value='objeto 4' id='obj_btn_4' class="rpgui-button">
+                            <input type='submit' name='obj_btn_1' value='objeto 1' id='obj_btn_1' class="rpgui-button rpgui-cursor-point">
+                            <input type='submit' name='obj_btn_2' value='objeto 2' id='obj_btn_2' class="rpgui-button rpgui-cursor-point">
+                            <input type='submit' name='obj_btn_3' value='objeto 3' id='obj_btn_3' class="rpgui-button rpgui-cursor-point">
+                            <input type='submit' name='obj_btn_4' value='objeto 4' id='obj_btn_4' class="rpgui-button rpgui-cursor-point">
                         </form>
 
                         <form action = "" method="POST">
-                            <input type='submit' name='attack_btn' value='Atacar' id='attack_btn'>
+                            <input type='submit' name='attack_btn' value='Atacar' id='attack_btn' class="rpgui-button rpgui-cursor-point">
                         </form>
 
                         <form action = "../controllers/" method="GET">
-                            <input type="submit" name="gen_txt" value="Generar ficha" id="get_txt" />
+                            <input type="submit" name="gen_txt" value="Generar ficha" id="get_txt" class="rpgui-button rpgui-cursor-point">
                         </form>
 
                         <form action = "../controllers/" method="GET">
-                            <input type="submit" name="update_pj" value="Subir ficha" id="update_pj" />
+                            <input type="submit" name="update_pj" value="Subir ficha" id="update_pj" class="rpgui-button rpgui-cursor-point">
                         </form>
-                    </div>
+                </div>
             </article>
     </div>
 </body>
